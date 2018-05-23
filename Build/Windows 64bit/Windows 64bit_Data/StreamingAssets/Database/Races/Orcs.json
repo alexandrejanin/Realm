@@ -1,0 +1,97 @@
+{
+    "collectiveName": "orcs",
+    "individualName": "orc",
+    "adjective": "orcish",
+    "placeNames": [
+        "ar",
+        "für",
+        "got",
+        "hal",
+        "hel",
+        "khol",
+        "khöl",
+        "kron",
+        "krön",
+        "kuch",
+        "kur",
+        "kurch",
+        "nag",
+        "nahk",
+        "nuk",
+        "nungst",
+        "tar",
+        "tun",
+        "von",
+        "vun",
+        "wal"
+    ],
+    "maleFirstNames": [
+        "gunth",
+        "kog",
+        "kohn",
+        "kron",
+        "nuk"
+    ],
+    "femaleFirstNames": [
+        "hal",
+        "na",
+        "ryn",
+        "wal"
+    ],
+    "lastNames": [
+        "ar",
+        "für",
+        "got",
+        "hal",
+        "hel",
+        "khol",
+        "khöl",
+        "kron",
+        "krön",
+        "kuch",
+        "kur",
+        "kurch",
+        "nag",
+        "nahk",
+        "nuk",
+        "nungst",
+        "tar",
+        "tun",
+        "von",
+        "vun",
+        "wal"
+    ],
+    "placeNameLength": {
+        "x": 1,
+        "y": 2
+    },
+    "firstNameLength": {
+        "x": 1,
+        "y": 2
+    },
+    "lastNameLength": {
+        "x": 1,
+        "y": 2
+    },
+    "expansionism": 0.75,
+    "hostility": 1.0,
+    "likesWater": false,
+    "heightRange": {
+        "x": 0.0,
+        "y": 0.75
+    },
+    "tempRange": {
+        "x": 0.6000000238418579,
+        "y": 1.0
+    },
+    "humidityRange": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "heightPreferred": 0.4000000059604645,
+    "tempPreferred": 0.8500000238418579,
+    "humidityPreferred": 0.5,
+    "heightWeight": 0.20000000298023225,
+    "tempWeight": 0.800000011920929,
+    "humidityWeight": 0.0
+}
