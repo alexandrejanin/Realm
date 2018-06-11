@@ -63,8 +63,11 @@ public class WorldCamera : MonoBehaviour {
 
 	private void Update() {
 		if (GameController.World == null) return;
-
-		Zoom(-Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity * zoom / 10);
+		
+		float input = Input.GetAxis("Mouse ScrollWheel");
+ 
+        if (input < 0) Zoom(zoom / 50 * zoomSensitivity);
+        else if (input > 0) Zoom(-(zoom / 50 * zoomSensitivity));
 
 		Move(keyboardSensitivity * Input.GetAxis("Horizontal"), keyboardSensitivity * Input.GetAxis("Vertical"));
 

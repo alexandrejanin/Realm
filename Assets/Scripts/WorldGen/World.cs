@@ -135,7 +135,7 @@ public class World {
 			Faction faction = new Faction(race);
 			factions.Add(faction);
 
-			Tile tile = GetBestTile(race, 100);
+			Tile tile = GetBestTile(race);
 
 			if (tile == null) {
 				Debug.Log($"Could not find suitable tile for {race}");
@@ -150,29 +150,13 @@ public class World {
 		}
 	}
 
-	private Tile GetBestTile(Race race, int tries) {
-		int attempts = 0;
-
+	private Tile GetBestTile(Race race) {
 		Tile bestTile = null;
-		do {
-			Tile tile = GetRandomTile(race);
+		foreach (Tile tile in tileMap) {
 			if (bestTile == null || tile.GetTownCompatibility(race) > bestTile.GetTownCompatibility(race)) bestTile = tile;
-
-			attempts++;
-		} while (attempts < tries && attempts < MaxAttempts);
+		}
 
 		return bestTile;
-	}
-
-	private Tile GetRandomTile(Race race) {
-		int attempts = 0;
-		Tile tile;
-		do {
-			tile = RandomTile();
-			attempts++;
-		} while (tile.location != null || !race.IsValidTile(tile) && attempts < MaxAttempts);
-
-		return tile;
 	}
 
 	public void Update() {
