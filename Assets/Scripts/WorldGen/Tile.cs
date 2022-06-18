@@ -17,9 +17,9 @@ public class Tile : IHeapItem<Tile> {
 
 	private bool IsCoast {
 		get {
-			for (int i = x - 1; i <= x + 1; i++) {
-				for (int j = y - 1; j <= y + 1; j++) {
-					Tile tile = world.GetTile(i, j);
+			for (var i = x - 1; i <= x + 1; i++) {
+				for (var j = y - 1; j <= y + 1; j++) {
+					var tile = world.GetTile(i, j);
 					if (tile != null && tile.IsWater) {
 						return true;
 					}
@@ -33,7 +33,7 @@ public class Tile : IHeapItem<Tile> {
 	public Location location;
 	public Town Town => location as Town;
 
-	public readonly List<Road> roads = new List<Road>();
+	public readonly List<Road> roads = new();
 
 	private readonly Color color, heightColor, tempColor, humidityColor;
 
@@ -95,27 +95,27 @@ public class Tile : IHeapItem<Tile> {
 	public float GetTownCompatibility(Race race) {
 		if (Town != null) return 0;
 
-		float raceCompatibility = GetRaceCompatibility(race);
+		var raceCompatibility = GetRaceCompatibility(race);
 
 		if (raceCompatibility <= 0) return 0;
 
 		const int minDistSquared = 64;
 
-		float townCompatibility = 1f;
+		var townCompatibility = 1f;
 
-		foreach (Town town in world.towns) {
-			int dist = GetDistanceSquared(this, town.Tile);
+		foreach (var town in world.towns) {
+			var dist = GetDistanceSquared(this, town.Tile);
 
 			if (dist < minDistSquared) {
-				float influenceRange = town.GetInfluenceRange();
+				var influenceRange = town.GetInfluenceRange();
 
-				float distance = Mathf.Sqrt(dist);
+				var distance = Mathf.Sqrt(dist);
 
 				if (distance < influenceRange) townCompatibility *= distance / influenceRange;
 			}
 		}
 
-		float total = raceCompatibility * townCompatibility;
+		var total = raceCompatibility * townCompatibility;
 
 		return race.likesWater && IsCoast
 			? Mathf.Sqrt(total)
@@ -123,11 +123,11 @@ public class Tile : IHeapItem<Tile> {
 	}
 
 	public List<Tile> GetNeighbors() {
-		List<Tile> neighbors = new List<Tile>();
+		var neighbors = new List<Tile>();
 
-		for (int i = x - 1; i <= x + 1; i++) {
-			for (int j = y - 1; j <= y + 1; j++) {
-				Tile tile = world.GetTile(i, j);
+		for (var i = x - 1; i <= x + 1; i++) {
+			for (var j = y - 1; j <= y + 1; j++) {
+				var tile = world.GetTile(i, j);
 				if (tile != null) {
 					neighbors.Add(tile);
 				}
@@ -172,7 +172,7 @@ public class Tile : IHeapItem<Tile> {
 	}
 
 	public int CompareTo(Tile other) {
-		int costCompare = FCost.CompareTo(other.FCost);
+		var costCompare = FCost.CompareTo(other.FCost);
 
 		if (costCompare == 0) {
 			costCompare = hCost.CompareTo(other.hCost);

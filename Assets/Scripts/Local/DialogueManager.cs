@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour {
 	[SerializeField] private GameObject textPanel;
 	[SerializeField] private Text textText, speakerText;
 
-	private readonly Queue<Sentence> textQueue = new Queue<Sentence>();
+	private readonly Queue<Sentence> textQueue = new();
 
 	public void EnqueueSentence(Sentence sentence) {
 		textQueue.Enqueue(sentence);
@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour {
 	private void DisplayNextSentence() {
 		if (textQueue.Count > 0) {
 			textPanel.SetActive(true);
-			Sentence sentence = textQueue.Dequeue();
+			var sentence = textQueue.Dequeue();
 			speakerText.text = sentence.speaker;
 			textText.text = sentence.text;
 		} else {

@@ -8,7 +8,7 @@ public class BodyPart {
 	public Equipable equipable;
 
 	public BodyPart parent;
-	public readonly HashSet<BodyPart> children = new HashSet<BodyPart>();
+	public readonly HashSet<BodyPart> children = new();
 
 	public BodyPartX x;
 	public BodyPartY y;

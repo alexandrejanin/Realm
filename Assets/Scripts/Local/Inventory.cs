@@ -1,18 +1,20 @@
 ﻿using System.Linq;
 
 public class Inventory : Container {
-	public readonly Character character;
-	public override Room Room => character.Room;
+    public override string Name => character.Name + "'s inventory";
+    public override Tile Tile => character.Tile;
 
-	public readonly int maxSize;
+    public readonly Character character;
 
-	public int FreeSpace => maxSize - TakenSpace;
-	public int TakenSpace => Items.Sum(item => item.size);
+    public readonly int maxSize;
 
-	public Inventory(Character character, int maxSize) : base(character.Name + "'s inventory") {
-		this.character = character;
-		this.maxSize = maxSize;
-	}
+    public int FreeSpace => maxSize - TakenSpace;
+    public int TakenSpace => Items.Sum(item => item.size);
 
-	public override bool CanAddItem(Item item) => base.CanAddItem(item) && FreeSpace >= item.size;
+    public override bool CanAddItem(Item item) => base.CanAddItem(item) && FreeSpace >= item.size;
+
+    public Inventory(Character character, int maxSize) {
+        this.character = character;
+        this.maxSize = maxSize;
+    }
 }

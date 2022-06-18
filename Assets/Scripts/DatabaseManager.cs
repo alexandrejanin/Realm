@@ -39,22 +39,22 @@ public class DatabaseManager : MonoBehaviour {
 			Debug.Log($"Created Directory {path}");
 		}
 
-		DirectoryInfo directory = new DirectoryInfo(path);
+		var directory = new DirectoryInfo(path);
 
 		//Create backup directory of needed
-		string backupPath = path + "/Backup/";
+		var backupPath = path + "/Backup/";
 
 		if (!Directory.Exists(backupPath)) Directory.CreateDirectory(backupPath);
 
 		//Delete files in backup directory
-		foreach (string file in Directory.EnumerateFiles(backupPath, "*.json")) {
+		foreach (var file in Directory.EnumerateFiles(backupPath, "*.json")) {
 			File.Delete(file);
 			File.Delete(file + ".meta");
 		}
 
 		//Backup files
-		foreach (FileInfo fileInfo in directory.GetFiles("*.json")) {
-			string targetPath = backupPath + fileInfo.Name;
+		foreach (var fileInfo in directory.GetFiles("*.json")) {
+			var targetPath = backupPath + fileInfo.Name;
 
 			if (File.Exists(targetPath)) {
 				File.Delete(targetPath);
@@ -65,13 +65,13 @@ public class DatabaseManager : MonoBehaviour {
 		}
 
 		//Delete files in save directory
-		foreach (string file in Directory.EnumerateFiles(path, "*.json")) {
+		foreach (var file in Directory.EnumerateFiles(path, "*.json")) {
 			File.Delete(file);
 			File.Delete(file + ".meta");
 		}
 
 		//Save objects to files
-		foreach (T o in database) {
+		foreach (var o in database) {
 			File.WriteAllText($"{path}{o}.json", JsonUtility.ToJson(o, true));
 		}
 	}

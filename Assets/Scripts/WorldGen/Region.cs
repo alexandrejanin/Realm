@@ -20,12 +20,12 @@ public sealed class Region {
 		color = Random.ColorHSV(0, 1, 0.5f, 1, 0.5f, 1);
 
 		this.tiles = tiles;
-		foreach (Tile tile in tiles) {
+		foreach (var tile in tiles) {
 			tile.region = this;
 		}
 	}
 
-	public string GetSizeName() => tiles.Count > 10000 ? "Huge" : (tiles.Count > 5000 ? "Large" : (tiles.Count > 2000 ? "Medium" : (tiles.Count > 500 ? "Small" : "Tiny")));
+	public string GetSizeName() => tiles.Count > 10000 ? "Huge" : tiles.Count > 5000 ? "Large" : tiles.Count > 2000 ? "Medium" : tiles.Count > 500 ? "Small" : "Tiny";
 
 	public override string ToString() => Name;
 }

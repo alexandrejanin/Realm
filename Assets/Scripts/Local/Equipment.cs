@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Equipment : Container {
 	private readonly Character character;
-	public override Room Room => character.Room;
 
-	public override HashSet<Item> Items => new HashSet<Item>(Equipables);
+	public override HashSet<Item> Items => new(Equipables);
 	public HashSet<Equipable> Equipables => character.body.Equipables;
 
 	public Equipment(Character character) : base(character.Name + "'s equipment") {
@@ -15,11 +14,11 @@ public class Equipment : Container {
 
 	public override bool TryAddItem(Item item) {
 		if (!CanAddItem(item)) return false;
-		Equipable equipable = item as Equipable;
+		var equipable = item as Equipable;
 
 		if (equipable == null) return false;
 
-		List<BodyPart> validParts = (from bodyPart in character.body.bodyParts where bodyPart.slot == equipable.slot select bodyPart).ToList();
+		var validParts = (from bodyPart in character.body.bodyParts where bodyPart.slot == equipable.slot select bodyPart).ToList();
 
 		if (validParts.Count < equipable.slotSize) return false;
 
@@ -28,7 +27,7 @@ public class Equipment : Container {
 			return true;
 		}
 
-		List<BodyPart> freeParts = validParts.Where(bodyPart => bodyPart.equipable == null).ToList();
+		var freeParts = validParts.Where(bodyPart => bodyPart.equipable == null).ToList();
 
 		if (freeParts.Count >= equipable.slotSize) {
 			EquipItem(equipable, validParts);
@@ -45,7 +44,7 @@ public class Equipment : Container {
 
 	private void EquipItem(Equipable equipable, IEnumerable<BodyPart> bodyParts) {
 		equipable.SetContainer(this);
-		foreach (BodyPart chosenPart in bodyParts) {
+		foreach (var chosenPart in bodyParts) {
 			if (chosenPart.equipable != null) RemoveItem(chosenPart);
 			chosenPart.equipable = equipable;
 		}
@@ -57,14 +56,14 @@ public class Equipment : Container {
 			return;
 		}
 
-		Equipable equipable = (Equipable) item;
+		var equipable = (Equipable) item;
 
 		if (!Contains(equipable)) {
 			Debug.LogError($"Trying to remove non-equipped item ({item})");
 			return;
 		}
 
-		foreach (BodyPart bodyPart in character.body.bodyParts) {
+		foreach (var bodyPart in character.body.bodyParts) {
 			if (bodyPart.equipable == equipable) RemoveItem(bodyPart);
 		}
 	}

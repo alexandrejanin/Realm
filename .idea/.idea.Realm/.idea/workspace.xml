@@ -1,87 +1,738 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="087d8882-b6e6-4f22-a228-6a99eace0ffc" name="Default" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list default="true" id="087d8882-b6e6-4f22-a228-6a99eace0ffc" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Local/RoomManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldParameters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Realm/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Realm/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Realm/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Realm/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Realm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Realm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Realm/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Map.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Map.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Sprites/Button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Sprites/Button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Sprites/Panel.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Sprites/Panel.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.backup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.backup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.backup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.backup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.backup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll.mdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll.mdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/link.xml.backup.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/link.xml.backup.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Getting Started With Odin.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Getting Started With Odin.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Assets/Sample Projects.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Assets/Sample Projects.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/BuildAOTAutomation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/BuildAOTAutomation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/EnsureOdinInspectorDefine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/EnsureOdinInspectorDefine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/OdinGettingStartedWizard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/OdinGettingStartedWizard.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/VectorIntDrawers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/VectorIntDrawers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/VectorIntFormatters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/VectorIntFormatters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes/DecoratorAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes/DecoratorAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes/PostProcessEditorAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Attributes/PostProcessEditorAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/BaseEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/BaseEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Decorators.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Decorators/AttributeDecorator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Decorators/AttributeDecorator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Decorators/Decorators.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Decorators/Decorators.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Decorators/TrackballDecorator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Decorators/TrackballDecorator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/EffectListEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/EffectListEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/AmbientOcclusionEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/AmbientOcclusionEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/AutoExposureEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/AutoExposureEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/BloomEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/BloomEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/ChromaticAberrationEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/ChromaticAberrationEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/ColorGradingEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/ColorGradingEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/DefaultPostProcessEffectEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/DefaultPostProcessEffectEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/DepthOfFieldEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/DepthOfFieldEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/LensDistortionEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/LensDistortionEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/ScreenSpaceReflectionsEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/ScreenSpaceReflectionsEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/VignetteEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Effects/VignetteEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessDebugEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessDebugEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessEffectBaseEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessEffectBaseEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessEffectEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessEffectEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessLayerEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessLayerEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessProfileEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessProfileEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessVolumeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/PostProcessVolumeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/CubeLutAssetFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/CubeLutAssetFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/CubeLutAssetImporter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/CubeLutAssetImporter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/DefineSetter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/DefineSetter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/ProfileFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/ProfileFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/ResourceAssetFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/ResourceAssetFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/VolumeFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Tools/VolumeFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/CurveEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/CurveEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/EditorUtilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/EditorUtilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/GlobalSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/GlobalSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/PostProcessShaderIncludePath.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/PostProcessShaderIncludePath.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/SerializedParameterOverride.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/SerializedParameterOverride.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/Styling.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/Utils/Styling.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/com.unity.postprocessing.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Editor/com.unity.postprocessing.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Gizmos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Gizmos/PostProcessLayer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Gizmos/PostProcessLayer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/PostProcessResources.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/PostProcessResources.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/DisplayNameAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/DisplayNameAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MaxAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MaxAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MinAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MinAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MinMaxAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/MinMaxAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/PostProcessAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/PostProcessAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/TrackballAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Attributes/TrackballAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/AmbientOcclusion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/AmbientOcclusion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/AutoExposure.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/AutoExposure.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Bloom.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Bloom.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ChromaticAberration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ChromaticAberration.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ColorGrading.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ColorGrading.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/DepthOfField.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/DepthOfField.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Dithering.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Dithering.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/FastApproximateAntialiasing.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/FastApproximateAntialiasing.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Fog.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Fog.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Grain.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Grain.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/LensDistortion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/LensDistortion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/MotionBlur.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/MotionBlur.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/MultiScaleVO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/MultiScaleVO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ScalableAO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ScalableAO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ScreenSpaceReflections.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/ScreenSpaceReflections.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/SubpixelMorphologicalAntialiasing.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/SubpixelMorphologicalAntialiasing.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/TemporalAntialiasing.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/TemporalAntialiasing.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Vignette.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Effects/Vignette.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/HistogramMonitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/HistogramMonitor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/LightMeterMonitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/LightMeterMonitor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/Monitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/Monitor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/VectorscopeMonitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/VectorscopeMonitor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/WaveformMonitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Monitors/WaveformMonitor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/ParameterOverride.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/ParameterOverride.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessBundle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessBundle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessDebug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessDebug.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessDebugLayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessDebugLayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessEffectRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessEffectRenderer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessEffectSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessEffectSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessEvent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessLayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessLayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessProfile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessRenderContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessRenderContext.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessResources.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessResources.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessVolume.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/PostProcessVolume.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/ColorUtilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/ColorUtilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/HableCurve.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/HableCurve.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/HaltonSeq.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/HaltonSeq.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/LogHistogram.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/LogHistogram.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/MeshUtilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/MeshUtilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/PropertySheet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/PropertySheet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/PropertySheetFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/PropertySheetFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/RuntimeUtilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/RuntimeUtilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/ShaderIDs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/ShaderIDs.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/Spline.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/Spline.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/TargetPool.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/TargetPool.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/TextureFormatUtilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/TextureFormatUtilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/TextureLerper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/TextureLerper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/XRSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/Utils/XRSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/com.unity.postprocessing.Runtime.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Runtime/com.unity.postprocessing.Runtime.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/ACES.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/ACES.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/D3D11.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/D3D11.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/D3D12.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/D3D12.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/D3D9.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/D3D9.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/Metal.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/Metal.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/OpenGL.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/OpenGL.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/PSP2.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/PSP2.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/PSSL.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/PSSL.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/Switch.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/Switch.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/Vulkan.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/Vulkan.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/XboxOne.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/API/XboxOne.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/AutoExposure.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/AutoExposure.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Bloom.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Bloom.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Copy.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Copy.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/CopyStd.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/CopyStd.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DeferredFog.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DeferredFog.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DepthOfField.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DepthOfField.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DepthOfField.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DepthOfField.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DiscardAlpha.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DiscardAlpha.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DiskKernels.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/DiskKernels.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Distortion.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Distortion.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Dithering.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Dithering.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ExposureHistogram.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ExposureHistogram.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ExposureHistogram.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ExposureHistogram.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/FastApproximateAntialiasing.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/FastApproximateAntialiasing.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/FinalPass.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/FinalPass.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Fog.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Fog.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/GaussianDownsample.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/GaussianDownsample.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/GrainBaker.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/GrainBaker.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Lut2DBaker.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Lut2DBaker.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Lut3DBaker.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Lut3DBaker.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MotionBlur.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MotionBlur.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVO.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVO.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVODownsample1.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVODownsample1.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVODownsample2.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVODownsample2.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVOUpsample.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/MultiScaleVOUpsample.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScalableAO.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScalableAO.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScalableAO.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScalableAO.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasingBridge.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasingBridge.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/TemporalAntialiasing.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/TemporalAntialiasing.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Texture2DLerp.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Texture2DLerp.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Texture3DLerp.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Texture3DLerp.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Uber.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Builtins/Uber.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Colors.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Colors.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Histogram.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Histogram.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Histogram.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Histogram.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/LightMeter.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/LightMeter.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Overlays.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Overlays.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Vectorscope.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Vectorscope.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Vectorscope.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Vectorscope.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Waveform.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Waveform.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Waveform.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Debug/Waveform.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Editor/ConvertToLog.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Editor/ConvertToLog.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Editor/CurveGrid.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Editor/CurveGrid.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Editor/Trackball.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Editor/Trackball.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Sampling.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/Sampling.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/StdLib.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/StdLib.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/xRLib.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Shaders/xRLib.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 256px/LDR_LLL1_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_15.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_16.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_17.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_18.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_19.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_20.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_21.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_22.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_23.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_27.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_28.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_29.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_30.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_31.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_33.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_34.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_35.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_36.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_37.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_38.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_39.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_40.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_41.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_42.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_43.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_44.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_46.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_47.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_49.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_51.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_52.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_53.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_54.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_55.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_56.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_57.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_58.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_59.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_60.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_61.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_61.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_62.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_63.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_8.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Blue Noise 64px/LDR_LLL1_9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Linear to Unity Log r1.cube" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Linear to Unity Log r1.cube.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Linear to sRGB r1.cube" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Linear to sRGB r1.cube.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Unity Log to Linear r1.cube" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Unity Log to Linear r1.cube.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Unity Log to sRGB r1.cube" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/Unity Log to sRGB r1.cube.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/sRGB to Linear r1.cube" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/sRGB to Linear r1.cube.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/sRGB to Unity Log r1.cube" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Cubes/sRGB to Unity Log r1.cube.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs/NeutralLdrLut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/LUTs/NeutralLdrLut.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt00.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Lens Dirt/LensDirt03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/SMAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/SMAA/AreaTex.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/SMAA/AreaTex.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/SMAA/SearchTex.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/SMAA/SearchTex.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Local.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Local.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/World.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Body.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/BodyPart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/BodyPart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/DialogueManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Equipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Equipment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Interactions/Interaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Interactions/Interaction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/InventoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Container.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Container.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Entity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Entity.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Equipable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Equipable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Floor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Floor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/Objects/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Room.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Local/Room.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Local/RoomManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PrefabManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Climate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Climate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Heap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Heap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/MapDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/MapDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/MeshGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/MeshGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Objects/Road.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Objects/Road.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Objects/Settler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Objects/Settler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Objects/Town.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Objects/Town.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Pathfinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Race.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Race.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Region.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Region.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/TextureGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/TextureGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/World.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldGenUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldGenUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldGenUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldGenUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldLogUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldLogUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldSettings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldParameters.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldLog/WorldLog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldLog/WorldLog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="WorldCamera.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldCamera.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="64" column="49" lean-forward="true" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldCamera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36dde0a4264046fc86d3f9b19ec84980564da0/45/bf868f89/Predicate`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldCamera.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldGenUI.cs" />
       </list>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="488" />
     <option name="width" value="1440" />
     <option name="height" value="810" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="UnityExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="UnityExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Realm" type="483dac07:UnityExplorerNode$Root" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-hidden-items" value="false" />
-      </pane>
-      <pane id="SolutionExplorer">
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
-      </pane>
-      <pane id="Scratches" />
-    </panes>
+  <component name="ProjectId" id="1h8QYiVTdmI6tfxU3NbPt0hzAfb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.1.4f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\k\Dev\Projects\Realm -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\k\Dev\Projects\Realm" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="087d8882-b6e6-4f22-a228-6a99eace0ffc" name="Default" comment="" />
@@ -96,40 +747,21 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="239000" />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-    </layout>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" hasHiddenPlayButtons="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/WorldGen/WorldCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="64" column="49" lean-forward="true" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

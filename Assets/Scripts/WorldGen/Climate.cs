@@ -15,14 +15,14 @@ public class Climate {
 	public bool isWater;
 
 	public Color GetColor(float tileHeight) {
-		Color color = colorGradient.Evaluate(Mathf.InverseLerp(height.x, height.y, tileHeight));
+		var color = colorGradient.Evaluate(Mathf.InverseLerp(height.x, height.y, tileHeight));
 		return color;
 	}
 
 	private bool CorrectTile(float tileHeight, float tileTemp, float tileHumidity) => height.Contains(tileHeight) && temp.Contains(tileTemp) && humidity.Contains(tileHumidity);
 
 	public static Climate GetClimate(float height, float temp, float humidity) {
-		foreach (Climate climate in GameController.Climates) {
+		foreach (var climate in GameController.Climates) {
 			if (climate.CorrectTile(height, temp, humidity)) return climate;
 		}
 

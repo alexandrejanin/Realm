@@ -1,69 +1,63 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public static class MeshGenerator {
-	public static Mesh GenerateTerrainMesh(float[,] heightMap, int lod, int meshWorldSize, Func<int, int, float> getHeightFunc) {
-		int size = heightMap.GetLength(0);
+    public static Mesh GenerateTerrainMesh(World world, Func<int, int, float> getHeightFunc) {
+        var topLeftX = (world.width - 1) / -2f;
+        var topLeftZ = (world.height - 1) / 2f;
 
-		int meshStepSize = lod == 0 ? 1 : lod * 2;
-		int meshSize = (size - 1) / meshStepSize + 1;
+        var meshData = new MeshData(world.height, world.width);
+        var vertexIndex = 0;
 
-		float meshScale = (float) meshWorldSize / size;
-		float topLeftX = (meshWorldSize - 1) / -2f;
-		float topLeftZ = (meshWorldSize - 1) / 2f;
+        for (var y = 0; y < world.height; y++) {
+            for (var x = 0; x < world.width; x++) {
+                var elevation = getHeightFunc.Invoke(x, y);
+                meshData.vertices[vertexIndex] = new Vector3(topLeftX + x, elevation, topLeftZ - y);
+                meshData.uvs[vertexIndex] = new Vector2(x / (float)world.width, y / (float)world.height);
 
-		MeshData meshData = new MeshData(meshSize);
-		int vertexIndex = 0;
+                if (x < world.width - 1 && y < world.height - 1) {
+                    meshData.AddTriangle(vertexIndex, vertexIndex + world.width + 1, vertexIndex + world.width);
+                    meshData.AddTriangle(vertexIndex + world.width + 1, vertexIndex, vertexIndex + 1);
+                }
 
-		for (int y = 0; y < size; y += meshStepSize) {
-			for (int x = 0; x < size; x += meshStepSize) {
-				float height = getHeightFunc.Invoke(x, y);
-				float worldX = x * meshScale;
-				float worldY = y * meshScale;
-				meshData.vertices[vertexIndex] = new Vector3(topLeftX + worldX, height, topLeftZ - worldY);
-				meshData.uvs[vertexIndex] = new Vector2(x / (float) size, y / (float) size);
+                vertexIndex++;
+            }
+        }
 
-				if (x < size - 1 && y < size - 1) {
-					meshData.AddTriangle(vertexIndex, vertexIndex + meshSize + 1, vertexIndex + meshSize);
-					meshData.AddTriangle(vertexIndex + meshSize + 1, vertexIndex, vertexIndex + 1);
-				}
+        return meshData.CreateMesh();
+    }
 
-				vertexIndex++;
-			}
-		}
+    private struct MeshData {
+        public readonly Vector3[] vertices;
+        private readonly int[] triangles;
+        public readonly Vector2[] uvs;
 
-		return meshData.CreateMesh();
-	}
+        private int triangleIndex;
 
-	private struct MeshData {
-		public readonly Vector3[] vertices;
-		private readonly int[] triangles;
-		public readonly Vector2[] uvs;
+        public MeshData(int height, int width) {
+            vertices = new Vector3[height * width];
+            uvs = new Vector2[height * width];
+            triangles = new int[(height - 1) * (width - 1) * 6];
+            triangleIndex = 0;
+        }
 
-		private int triangleIndex;
+        public void AddTriangle(int a, int b, int c) {
+            triangles[triangleIndex] = a;
+            triangles[triangleIndex + 1] = b;
+            triangles[triangleIndex + 2] = c;
+            triangleIndex += 3;
+        }
 
-		public MeshData(int size) {
-			vertices = new Vector3[size * size];
-			uvs = new Vector2[size * size];
-			triangles = new int[(size - 1) * (size - 1) * 6];
-			triangleIndex = 0;
-		}
-
-		public void AddTriangle(int a, int b, int c) {
-			triangles[triangleIndex] = a;
-			triangles[triangleIndex + 1] = b;
-			triangles[triangleIndex + 2] = c;
-			triangleIndex += 3;
-		}
-
-		public Mesh CreateMesh() {
-			Mesh mesh = new Mesh {
-				vertices = vertices,
-				triangles = triangles,
-				uv = uvs
-			};
-			mesh.RecalculateNormals();
-			return mesh;
-		}
-	}
+        public Mesh CreateMesh() {
+            var mesh = new Mesh {
+                indexFormat = IndexFormat.UInt32,
+                vertices = vertices,
+                triangles = triangles,
+                uv = uvs,
+            };
+            mesh.RecalculateNormals();
+            return mesh;
+        }
+    }
 }

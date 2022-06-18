@@ -10,7 +10,7 @@ public class Race {
 
 	[SerializeField, TabGroup("Names")] private string[] placeNames, maleFirstNames, femaleFirstNames, lastNames;
 
-	[SerializeField, TabGroup("Names")] private Vector2Int placeNameLength = new Vector2Int(1, 2), firstNameLength = new Vector2Int(1, 2), lastNameLength = new Vector2Int(1, 3);
+	[SerializeField, TabGroup("Names")] private Vector2Int placeNameLength = new(1, 2), firstNameLength = new(1, 2), lastNameLength = new(1, 3);
 
 	[Range(0, 1), TabGroup("Characteristics")]
 	public float expansionism, hostility;
@@ -18,7 +18,7 @@ public class Race {
 	[TabGroup("Characteristics")] public bool likesWater;
 
 	[MinMaxSlider(0f, 1f, true), TabGroup("Range")]
-	public Vector2 heightRange = new Vector2(0, 1), tempRange = new Vector2(0, 1), humidityRange = new Vector2(0, 1);
+	public Vector2 heightRange = new(0, 1), tempRange = new(0, 1), humidityRange = new(0, 1);
 
 	[Range(0, 1), TabGroup("Preferred")] public float heightPreferred = .5f, tempPreferred = .5f, humidityPreferred = .5f;
 
@@ -33,9 +33,9 @@ public class Race {
 	public bool IsValidTile(Tile tile) => !tile.IsWater && heightRange.Contains(tile.height) && tempRange.Contains(tile.temp) && humidityRange.Contains(tile.humidity);
 
 	public string GetPlaceName() {
-		string placeName = "";
-		int length = placeNameLength.Random();
-		for (int i = 0; i < length; i++) {
+		var placeName = "";
+		var length = placeNameLength.Random();
+		for (var i = 0; i < length; i++) {
 			placeName += placeNames[GameController.Random.Next(0, placeNames.Length)];
 		}
 
@@ -43,10 +43,10 @@ public class Race {
 	}
 
 	public string GetFirstName(bool isFemale) {
-		string firstName = "";
-		int length = firstNameLength.Random();
-		string[] names = isFemale ? femaleFirstNames : maleFirstNames;
-		for (int i = 0; i < length; i++) {
+		var firstName = "";
+		var length = firstNameLength.Random();
+		var names = isFemale ? femaleFirstNames : maleFirstNames;
+		for (var i = 0; i < length; i++) {
 			firstName += names.RandomItem();
 		}
 
@@ -54,9 +54,9 @@ public class Race {
 	}
 
 	public string GetLastName() {
-		string lastName = "";
-		int length = lastNameLength.Random();
-		for (int i = 0; i < length; i++) {
+		var lastName = "";
+		var length = lastNameLength.Random();
+		for (var i = 0; i < length; i++) {
 			lastName += lastNames.RandomItem();
 		}
 

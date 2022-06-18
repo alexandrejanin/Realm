@@ -14,7 +14,7 @@ public class WorldLogUI : MonoBehaviour {
 
 	public void UpdateLog() {
 		if (panel.activeInHierarchy) {
-			WorldEventImportance importance = (WorldEventImportance) importanceDropdown.value;
+			var importance = (WorldEventImportance) importanceDropdown.value;
 			worldLogText.text = GameController.World.log.GetLog(importance);
 		}
 	}

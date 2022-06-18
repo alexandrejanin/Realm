@@ -3,7 +3,7 @@
 public class WorldLog {
 	private readonly World world;
 
-	private readonly List<WorldEvent> events = new List<WorldEvent>();
+	private readonly List<WorldEvent> events = new();
 
 	public WorldLog(World world) {
 		this.world = world;
@@ -14,11 +14,11 @@ public class WorldLog {
 	}
 
 	public string GetLog(WorldEventImportance minImportance) {
-		string str = "";
+		var str = "";
 
-		for (int day = 0; day <= world.Days; day++) {
-			bool eventFound = false;
-			foreach (WorldEvent worldEvent in events) {
+		for (var day = 0; day <= world.Day; day++) {
+			var eventFound = false;
+			foreach (var worldEvent in events) {
 				if (worldEvent.day == day && worldEvent.importance >= minImportance) {
 					if (!eventFound) {
 						str += $"On {GetDay(day)},";

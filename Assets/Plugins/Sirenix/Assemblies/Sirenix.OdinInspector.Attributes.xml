@@ -62,39 +62,116 @@
             </code>
             </example>
         </member>
+        <member name="F:Sirenix.OdinInspector.AssetListAttribute.AutoPopulate">
+            <summary>
+            <para>If <c>true</c>, all assets found and displayed by the asset list, will automatically be added to the list when inspected.</para>
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetListAttribute.Tags">
+            <summary>
+            <para>Comma separated list of tags to filter the asset list.</para>
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetListAttribute.LayerNames">
+            <summary>
+            <para>Filter the asset list to only include assets with a specified layer.</para>
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetListAttribute.AssetNamePrefix">
+            <summary>
+            <para>Filter the asset list to only include assets which name begins with.</para>
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetListAttribute.Path">
+            <summary>
+            <para>Filter the asset list to only include assets which is located at the specified path.</para>
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetListAttribute.CustomFilterMethod">
+            <summary>
+            <para>Filter the asset list to only include assets for which the given filter method returns true.</para>
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.AssetListAttribute.#ctor">
             <summary>
             <para>Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.AssetListAttribute"/> class.</para>
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.AssetListAttribute.AutoPopulate">
+        <member name="T:Sirenix.OdinInspector.AssetSelectorAttribute">
             <summary>
-            <para>If <c>true</c>, all assets found and displayed by the asset list, will autoamatically be added to the list when inspected.</para>
+            The AssetSelector attribute can be used on all Unity types and will prepend a small button next to the object field that when clicked,
+            will present the user with a dropdown of assets to select from which can be customized from the attribute.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.AssetListAttribute.Tags">
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.IsUniqueList">
             <summary>
-            <para>Comma seperated list of tags to filter the asset list.</para>
+            True by default.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.AssetListAttribute.LayerNames">
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.DrawDropdownForListElements">
             <summary>
-            <para>Filter the asset list to only include assets with a specified layer.</para>
+            True by default. If the ValueDropdown attribute is applied to a list, then disabling this,
+            will render all child elements normally without using the ValueDropdown. The ValueDropdown will
+            still show up when you click the add button on the list drawer, unless <see cref="F:Sirenix.OdinInspector.AssetSelectorAttribute.DisableListAddButtonBehaviour"/> is true.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.AssetListAttribute.AssetNamePrefix">
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.DisableListAddButtonBehaviour">
             <summary>
-            <para>Filter the asset list to only include assets which name begins with.</para>
+            False by default.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.AssetListAttribute.Path">
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.ExcludeExistingValuesInList">
             <summary>
-            <para>Filter the asset list to only include assets which is located at the specified path.</para>
+            If the ValueDropdown attribute is applied to a list, and <see cref="F:Sirenix.OdinInspector.AssetSelectorAttribute.IsUniqueList"/> is set to true, then enabling this,
+            will exclude existing values, instead of rendering a checkbox indicating whether the item is already included or not.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.AssetListAttribute.CustomFilterMethod">
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.ExpandAllMenuItems">
             <summary>
-            <para>Filter the asset list to only include assets for which the given filter method returns true.</para>
+            If the dropdown renders a tree-view, then setting this to true will ensure everything is expanded by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.FlattenTreeView">
+            <summary>
+            By default, the dropdown will create a tree view.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.DropdownWidth">
+            <summary>
+            Gets or sets the width of the dropdown. Default is zero.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.DropdownHeight">
+            <summary>
+            Gets or sets the height of the dropdown. Default is zero.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.DropdownTitle">
+            <summary>
+            Gets or sets the title for the dropdown. Null by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.SearchInFolders">
+            <summary>
+            Specify which folders to search in. Specifying no folders will make it search in your entire project.
+            Use the <see cref="P:Sirenix.OdinInspector.AssetSelectorAttribute.Paths"/> property for a more clean way of populating this array through attributes.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AssetSelectorAttribute.Filter">
+            <summary>
+            The filters we should use when calling AssetDatabase.FindAssets.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.AssetSelectorAttribute.Paths">
+            <summary>
+            <para>
+            Specify which folders to search in. Specifying no folders will make it search in your entire project.
+            You can decalir multiple paths using '|' as the seperator.
+            Example: <code>[AssetList(Paths = "Assets/Textures|Assets/Other/Textures")]</code>
+            </para>
+            <para>
+            This property is simply a more clean way of populating the <see cref="F:Sirenix.OdinInspector.AssetSelectorAttribute.SearchInFolders"/> array. 
+            </para>
             </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.AssetsOnlyAttribute">
@@ -194,17 +271,22 @@
             <seealso cref="T:Sirenix.OdinInspector.TabGroupAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.BoxGroupAttribute.ShowLabel">
+        <member name="F:Sirenix.OdinInspector.BoxGroupAttribute.ShowLabel">
             <summary>
             If <c>true</c> a label for the group will be drawn on top.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.BoxGroupAttribute.CenterLabel">
+        <member name="F:Sirenix.OdinInspector.BoxGroupAttribute.CenterLabel">
             <summary>
             If <c>true</c> the header label will be places in the center of the group header. Otherwise it will be in left side.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.BoxGroupAttribute.#ctor(System.String,System.Boolean,System.Boolean,System.Int32)">
+        <member name="F:Sirenix.OdinInspector.BoxGroupAttribute.LabelText">
+            <summary>
+            If non-null, this is used instead of the group's name as the title label.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.BoxGroupAttribute.#ctor(System.String,System.Boolean,System.Boolean,System.Single)">
             <summary>
             Adds the property to the specified box group.
             </summary>
@@ -270,27 +352,64 @@
             <seealso cref="T:Sirenix.OdinInspector.InlineButtonAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.ButtonGroupAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.ButtonAttribute.ButtonHeight">
+        <member name="F:Sirenix.OdinInspector.ButtonAttribute.ButtonHeight">
             <summary>
             Gets the height of the button. If it's zero or below then use default.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.ButtonAttribute.Name">
+        <member name="F:Sirenix.OdinInspector.ButtonAttribute.Name">
             <summary>
             Use this to override the label on the button.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonAttribute.Style">
+            <summary>
+            The style in which to draw the button.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonAttribute.Expanded">
+            <summary>
+            If the button contains parameters, you can disable the foldout it creates by setting this to true.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonAttribute.DisplayParameters">
+            <summary>
+            <para>Whether to display the button method's parameters (if any) as values in the inspector. True by default.</para>
+            <para>If this is set to false, the button method will instead be invoked through an ActionResolver or ValueResolver (based on whether it returns a value), giving access to contextual named parameter values like "InspectorProperty property" that can be passed to the button method.</para>
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonAttribute.DirtyOnClick">
+            <summary>
+            Whether the containing object or scene (if there is one) should be marked dirty when the button is clicked. True by default.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ButtonAttribute.DrawResult">
+            <summary>
+            If the button has a return type, set this to false to not draw the result. Default value is true.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor">
+            <summary>
+            Creates a button in the inspector named after the method.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(Sirenix.OdinInspector.ButtonSizes)">
             <summary>
             Creates a button in the inspector named after the method.
             </summary>
-            <param name="buttonSize">The size of the button.</param>
+            <param name="size">The size of the button.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.Int32)">
             <summary>
             Creates a button in the inspector named after the method.
             </summary>
             <param name="buttonSize">The size of the button.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String)">
+            <summary>
+            Creates a button in the inspector with a custom name.
+            </summary>
+            <param name="name">Custom name for the button.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String,Sirenix.OdinInspector.ButtonSizes)">
             <summary>
@@ -306,10 +425,53 @@
             <param name="name">Custom name for the button.</param>
             <param name="buttonSize">Size of the button in pixels.</param>
         </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(Sirenix.OdinInspector.ButtonStyle)">
+            <summary>
+            Creates a button in the inspector named after the method.
+            </summary>
+            <param name="parameterBtnStyle">Button style for methods with parameters.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.Int32,Sirenix.OdinInspector.ButtonStyle)">
+            <summary>
+            Creates a button in the inspector named after the method.
+            </summary>
+            <param name="buttonSize">The size of the button.</param>
+            <param name="parameterBtnStyle">Button style for methods with parameters.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(Sirenix.OdinInspector.ButtonSizes,Sirenix.OdinInspector.ButtonStyle)">
+            <summary>
+            Creates a button in the inspector named after the method.
+            </summary>
+            <param name="size">The size of the button.</param>
+            <param name="parameterBtnStyle">Button style for methods with parameters.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String,Sirenix.OdinInspector.ButtonStyle)">
+            <summary>
+            Creates a button in the inspector with a custom name.
+            </summary>
+            <param name="name">Custom name for the button.</param>
+            <param name="parameterBtnStyle">Button style for methods with parameters.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String,Sirenix.OdinInspector.ButtonSizes,Sirenix.OdinInspector.ButtonStyle)">
+            <summary>
+            Creates a button in the inspector with a custom name.
+            </summary>
+            <param name="name">Custom name for the button.</param>
+            <param name="buttonSize">Size of the button.</param>
+            <param name="parameterBtnStyle">Button style for methods with parameters.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String,System.Int32,Sirenix.OdinInspector.ButtonStyle)">
+            <summary>
+            Creates a button in the inspector with a custom name.
+            </summary>
+            <param name="name">Custom name for the button.</param>
+            <param name="buttonSize">Size of the button in pixels.</param>
+            <param name="parameterBtnStyle">Button style for methods with parameters.</param>
+        </member>
         <member name="T:Sirenix.OdinInspector.ButtonGroupAttribute">
              <summary>
              <para>ButtonGroup is used on any instance function, and adds buttons to the inspector organized into horizontal groups.</para>
-             <para>Use this to organize multiple button in a tiddy horizontal group.</para>
+             <para>Use this to organize multiple button in a tidy horizontal group.</para>
              </summary>
              <example>
              <para>The following example shows how ButtonGroup is used to organize two buttons into one group.</para>
@@ -365,12 +527,40 @@
              <seealso cref="T:Sirenix.OdinInspector.TabGroupAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
         </member>
-        <member name="M:Sirenix.OdinInspector.ButtonGroupAttribute.#ctor(System.String,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.ButtonGroupAttribute.#ctor(System.String,System.Single)">
             <summary>
             Organizes the button into the specified button group.
             </summary>
             <param name="group">The group to organize the button into.</param>
             <param name="order">The order of the group in the inspector..</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.ButtonStyle">
+            <summary>
+            Button style for methods with parameters.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonStyle.CompactBox">
+            <summary>
+            Draws a foldout box around the parameters of the method with the button on the box header itself.
+            This is the default style of a method with parameters.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonStyle.FoldoutButton">
+            <summary>
+            Draws a button with a foldout to expose the parameters of the method.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonStyle.Box">
+            <summary>
+            Draws a foldout box around the parameters of the method with the button at the bottom of the box.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.ChildGameObjectsOnlyAttribute">
+            <summary>
+            The ChildGameObjectsOnly attribute can be used on Components and GameObject fields and will prepend a small button next to the object-field that
+            will search through all child gameobjects for assignable objects and present them in a dropdown for the user to choose from.
+            </summary>
+            <seealso cref="T:System.Attribute" />
         </member>
         <member name="T:Sirenix.OdinInspector.CustomValueDrawerAttribute">
              <summary>
@@ -384,31 +574,31 @@
              {
                  public float From = 2, To = 7;
             
-             [CustomValueDrawer("MyStaticCustomDrawerStatic")]
-             public float CustomDrawerStatic;
+                 [CustomValueDrawer("MyStaticCustomDrawerStatic")]
+                 public float CustomDrawerStatic;
             
-             [CustomValueDrawer("MyStaticCustomDrawerInstance")]
-             public float CustomDrawerInstance;
+                 [CustomValueDrawer("MyStaticCustomDrawerInstance")]
+                 public float CustomDrawerInstance;
             
-             [CustomValueDrawer("MyStaticCustomDrawerArray")]
-             public float[] CustomDrawerArray;
+                 [CustomValueDrawer("MyStaticCustomDrawerArray")]
+                 public float[] CustomDrawerArray;
             
              #if UNITY_EDITOR
             
-             private static float MyStaticCustomDrawerStatic(float value, GUIContent label)
-             {
-                 return EditorGUILayout.Slider(value, 0f, 10f);
-             }
+                 private static float MyStaticCustomDrawerStatic(float value, GUIContent label)
+                 {
+                     return EditorGUILayout.Slider(value, 0f, 10f);
+                 }
             
-             private float MyStaticCustomDrawerInstance(float value, GUIContent label)
-             {
-                 return EditorGUILayout.Slider(value, this.From, this.To);
-             }
+                 private float MyStaticCustomDrawerInstance(float value, GUIContent label)
+                 {
+                     return EditorGUILayout.Slider(value, this.From, this.To);
+                 }
             
-             private float MyStaticCustomDrawerArray(float value, GUIContent label)
-             {
-                 return EditorGUILayout.Slider(value, this.From, this.To);
-             }
+                 private float MyStaticCustomDrawerArray(float value, GUIContent label)
+                 {
+                     return EditorGUILayout.Slider(value, this.From, this.To);
+                 }
             
              #endif
              }
@@ -417,7 +607,12 @@
         </member>
         <member name="P:Sirenix.OdinInspector.CustomValueDrawerAttribute.MethodName">
             <summary>
-            Name of the custom drawer method.
+            Name of the custom drawer method. Obsolete; use the Action member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.CustomValueDrawerAttribute.Action">
+            <summary>
+            A resolved string that defines the custom drawer action to take, such as an expression or method invocation.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.CustomValueDrawerAttribute.#ctor(System.String)">
@@ -425,7 +620,7 @@
             Instead of making a new attribute, and a new drawer, for a one-time thing, you can with this attribute, make a method that acts as a custom property drawer.
             These drawers will out of the box have support for undo/redo and multi-selection.
             </summary>
-            <param name="methodName">The name of the method to draw the value.</param>
+            <param name="action">A resolved string that defines the custom drawer action to take, such as an expression or method invocation.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.DisableInInlineEditorsAttribute">
             <summary>
@@ -452,12 +647,49 @@
             Disables a property if it is drawn from a prefab asset or a prefab instance.
             </summary>
         </member>
-        <member name="T:Sirenix.OdinInspector.EnumPagingAttribute">
+        <member name="T:Sirenix.OdinInspector.DoNotDrawAsReferenceAttribute">
             <summary>
-            <para>Draws an enum .</para>
+            Indicates that the member should not be drawn as a value reference, if it becomes a reference to another value in the tree. Beware, and use with care! This may lead to infinite draw loops!
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.DontValidateAttribute">
+            <summary>
+            Tells the validation system that this member should not be validated. It will not show validation messages in the inspector, and it will not be scanned by the project validator.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.EnableGUIAttribute">
+            <summary>
+            <para>An attribute that enables GUI.</para>
             </summary>
             <example>
             <code>
+            public class InlineEditorExamples : MonoBehaviour
+            {
+                [EnableGUI]
+                public string SomeReadonlyProperty { get { return "My GUI is usually disabled." } }
+            }
+            </code>
+            </example>
+            <seealso cref="T:Sirenix.OdinInspector.ReadOnlyAttribute"/>
+        </member>
+        <member name="T:Sirenix.OdinInspector.EnumPagingAttribute">
+            <summary>
+            <para>Draws an enum selector in the inspector with next and previous buttons to let you cycle through the available values for the enum property.</para>
+            </summary>
+            <example>
+            <code>
+            public enum MyEnum
+            {
+                One,
+                Two,
+                Three,
+            }
+            
+            public class MyMonoBehaviour : MonoBehaviour
+            {
+                [EnumPaging]
+                public MyEnum Value;
+            }
             </code>
             </example>
             <seealso cref="T:System.Attribute" />
@@ -513,36 +745,41 @@
             <seealso cref="T:Sirenix.OdinInspector.FolderPathAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.DisplayAsStringAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.FilePathAttribute.AbsolutePath">
+        <member name="F:Sirenix.OdinInspector.FilePathAttribute.AbsolutePath">
             <summary>
             If <c>true</c> the FilePath will provide an absolute path, instead of a relative one.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.FilePathAttribute.Extensions">
+        <member name="F:Sirenix.OdinInspector.FilePathAttribute.Extensions">
             <summary>
-            Comma seperated list of allowed file extensions. Dots are optional.
+            Comma separated list of allowed file extensions. Dots are optional.
             Supports member referencing with $.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.FilePathAttribute.ParentFolder">
+        <member name="F:Sirenix.OdinInspector.FilePathAttribute.ParentFolder">
             <summary>
             ParentFolder provides an override for where the path is relative to. ParentFolder can be relative to the Unity project, or an absolute path.
             Supports member referencing with $.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.FilePathAttribute.RequireValidPath">
+        <member name="F:Sirenix.OdinInspector.FilePathAttribute.RequireValidPath">
             <summary>
             If <c>true</c> an error will be displayed for invalid, or missing paths.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.FilePathAttribute.UseBackslashes">
+        <member name="F:Sirenix.OdinInspector.FilePathAttribute.RequireExistingPath">
+            <summary>
+            If <c>true</c> an error will be displayed for non-existing paths.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.FilePathAttribute.UseBackslashes">
             <summary>
             By default FilePath enforces forward slashes. Set UseBackslashes to <c>true</c> if you want backslashes instead.
             </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.FilePathAttribute.ReadOnly">
             <summary>
-            Whether the path should read only.
+            Gets or sets a value indicating whether the path should be read only.
             </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.FolderPathAttribute">
@@ -589,26 +826,90 @@
             <seealso cref="T:Sirenix.OdinInspector.FilePathAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.DisplayAsStringAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.FolderPathAttribute.AbsolutePath">
+        <member name="F:Sirenix.OdinInspector.FolderPathAttribute.AbsolutePath">
             <summary>
             If <c>true</c> the FolderPath will provide an absolute path, instead of a relative one.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.FolderPathAttribute.ParentFolder">
+        <member name="F:Sirenix.OdinInspector.FolderPathAttribute.ParentFolder">
             <summary>
             ParentFolder provides an override for where the path is relative to. ParentFolder can be relative to the Unity project, or an absolute path.
             Supports member referencing with $.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.FolderPathAttribute.RequireValidPath">
+        <member name="F:Sirenix.OdinInspector.FolderPathAttribute.RequireValidPath">
             <summary>
             If <c>true</c> an error will be displayed for invalid, or missing paths.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.FolderPathAttribute.UseBackslashes">
+        <member name="F:Sirenix.OdinInspector.FolderPathAttribute.RequireExistingPath">
+            <summary>
+            If <c>true</c> an error will be displayed for non-existing paths.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.FolderPathAttribute.UseBackslashes">
             <summary>
             By default FolderPath enforces forward slashes. Set UseBackslashes to <c>true</c> if you want backslashes instead.
             </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.HideDuplicateReferenceBoxAttribute">
+            <summary>
+            Indicates that Odin should hide the reference box, if this property would otherwise be drawn as a reference to another property, due to duplicate reference values being encountered.
+            Note that if the value is referencing itself recursively, then the reference box will be drawn regardless of this attribute in all recursive draw calls.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.HideIfGroupAttribute">
+            <summary>
+            <p>HideIfGroup allows for showing or hiding a group of properties based on a condition.</p>
+            <p>The attribute is a group attribute and can therefore be combined with other group attributes, and even be used to show or hide entire groups.</p>
+            <p>Note that in the vast majority of cases where you simply want to be able to control the visibility of a single group, it is better to use the VisibleIf parameter that *all* group attributes have.</p>
+            </summary>
+            <seealso cref="T:Sirenix.OdinInspector.ShowIfAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.HideIfAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.ShowIfGroupAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.ShowInInspectorAttribute"/>
+            <seealso cref="T:UnityEngine.HideInInspector"/>
+        </member>
+        <member name="P:Sirenix.OdinInspector.HideIfGroupAttribute.Animate">
+            <summary>
+            Whether or not to visually animate group visibility changes.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.HideIfGroupAttribute.Value">
+            <summary>
+            The optional member value.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.HideIfGroupAttribute.MemberName">
+            <summary>
+            Name of member to use when to hide the group. Defaults to the name of the group, by can be overriden by setting this property.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.HideIfGroupAttribute.Condition">
+            <summary>
+            A resolved string that defines the condition to check the value of, such as a member name or an expression.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.HideIfGroupAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Makes a group that can be shown or hidden based on a condition.
+            </summary>
+            <param name="path">The group path.</param>
+            <param name="animate">If <c>true</c> then a fade animation will be played when the group is hidden or shown.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.HideIfGroupAttribute.#ctor(System.String,System.Object,System.Boolean)">
+            <summary>
+            Makes a group that can be shown or hidden based on a condition.
+            </summary>
+            <param name="path">The group path.</param>
+            <param name="value">The value the member should equal for the property to shown.</param>
+            <param name="animate">If <c>true</c> then a fade animation will be played when the group is hidden or shown.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.HideIfGroupAttribute.CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute)">
+            <summary>
+            Combines HideIfGroup attributes.
+            </summary>
+            <param name="other">Another ShowIfGroup attribute.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.HideInInlineEditorsAttribute">
             <summary>
@@ -634,6 +935,28 @@
             <summary>
             Hides a property if it is drawn from a prefab instance or a prefab asset.
             </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.HideInTablesAttribute">
+            <summary>
+            The HideInTables attribute is used to prevent members from showing up as columns in tables drawn using the <see cref="T:Sirenix.OdinInspector.TableListAttribute"/>.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.HideNetworkBehaviourFieldsAttribute">
+            <summary>
+            Apply HideNetworkBehaviourFields to your class to prevent the special "Network Channel" and "Network Send Interval" properties from being shown in the inspector for a NetworkBehaviour.
+            This attribute has no effect on classes that are not derived from NetworkBehaviour.
+            </summary>
+            <example>
+            <para>The following example shows how to use this attribute.</para>
+            <code>
+            [HideNetworkBehaviourFields]
+            public class MyComponent : NetworkBehaviour
+            {
+                // The "Network Channel" and "Network Send Interval" properties will not be shown for this component in the inspector
+            }
+            </code>
+            </example>
+            <seealso cref="T:System.Attribute" />
         </member>
         <member name="T:Sirenix.OdinInspector.InlinePropertyAttribute">
              <summary>
@@ -679,7 +1002,7 @@
              </example>
              <seealso cref="T:System.Attribute" />
         </member>
-        <member name="P:Sirenix.OdinInspector.InlinePropertyAttribute.LabelWidth">
+        <member name="F:Sirenix.OdinInspector.InlinePropertyAttribute.LabelWidth">
             <summary>
             Specify a label width for all child properties.
             </summary>
@@ -700,16 +1023,176 @@
             </example>
             <seealso cref="T:Sirenix.OdinInspector.TitleAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.LabelWidthAttribute.Width">
+            <summary>
+            The new text of the label.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.LabelWidthAttribute.#ctor(System.Single)">
             <summary>
             Give a property a custom label.
             </summary>
             <param name="width">The width of the label.</param>
         </member>
-        <member name="P:Sirenix.OdinInspector.LabelWidthAttribute.Width">
+        <member name="T:Sirenix.OdinInspector.OnCollectionChangedAttribute">
             <summary>
-            The new text of the label.
+            <para>
+               OnCollectionChanged can be put on collections, and provides an event callback when the collection is about to be changed through the inspector, 
+               and when the collection has been changed through the inspector. Additionally, it provides a CollectionChangeInfo struct containing information
+               about the exact changes made to the collection. This attribute works for all collections with a collection resolver, amongst them arrays, lists,
+               dictionaries, hashsets, stacks and linked lists.
+            </para>
             </summary>
+            <remarks>
+            <note type="note">Note that this attribute only works in the editor! Collections changed by script will not trigger change events!</note>
+            </remarks>
+            <example>
+            <para>The following example shows how OnCollectionChanged can be used to get callbacks when a collection is being changed.</para>
+            <code>
+            [OnCollectionChanged("Before", "After")]
+            public List&lt;string&gt; list;
+            
+            public void Before(CollectionChangeInfo info)
+            {
+                if (info.ChangeType == CollectionChangeType.Add || info.ChangeType == CollectionChangeType.Insert)
+                {
+                    Debug.Log("Adding to the list!");
+                }
+                else if (info.ChangeType == CollectionChangeType.RemoveIndex || info.ChangeType == CollectionChangeType.RemoveValue)
+                {
+                    Debug.Log("Removing from the list!");
+                }
+            }
+            
+            public void After(CollectionChangeInfo info)
+            {
+                if (info.ChangeType == CollectionChangeType.Add || info.ChangeType == CollectionChangeType.Insert)
+                {
+                    Debug.Log("Finished adding to the list!");
+                }
+                else if (info.ChangeType == CollectionChangeType.RemoveIndex || info.ChangeType == CollectionChangeType.RemoveValue)
+                {
+                    Debug.Log("Finished removing from the list!");
+                }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="T:Sirenix.OdinInspector.OnInspectorDisposeAttribute">
+            <summary>
+            <para>The OnInspectorDispose attribute takes in an action string as an argument (typically the name of a method to be invoked, or an expression to be executed), and executes that action when the property's drawers are disposed in the inspector.</para>
+            <para>Disposing will happen at least once, when the inspector changes selection or the property tree is collected by the garbage collector, but may also happen several times before that, most often when the type of a polymorphic property changes and it refreshes its drawer setup and recreates all its children, disposing of the old setup and children.</para>
+            </summary>
+            <example>
+            <para>The following example demonstrates how OnInspectorDispose works.</para>
+            <code>
+            public class MyComponent : MonoBehaviour
+            {
+                [OnInspectorDispose(@"@UnityEngine.Debug.Log(""Dispose event invoked!"")")]
+                [ShowInInspector, InfoBox("When you change the type of this field, or set it to null, the former property setup is disposed. The property setup will also be disposed when you deselect this example."), DisplayAsString]
+                public BaseClass PolymorphicField;
+                
+                public abstract class BaseClass { public override string ToString() { return this.GetType().Name; } }
+                public class A : BaseClass { }
+                public class B : BaseClass { }
+                public class C : BaseClass { }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Sirenix.OdinInspector.OnInspectorDisposeAttribute.#ctor">
+            <summary>
+            This constructor should be used when the attribute is placed directly on a method.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.OnInspectorDisposeAttribute.#ctor(System.String)">
+            <summary>
+            This constructor should be used when the attribute is placed on a non-method member.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.OnInspectorInitAttribute">
+            <summary>
+            <para>The OnInspectorInit attribute takes in an action string as an argument (typically the name of a method to be invoked, or an expression to be executed), and executes that action when the property's drawers are initialized in the inspector.</para>
+            <para>Initialization will happen at least once during the first drawn frame of any given property, but may also happen several times later, most often when the type of a polymorphic property changes and it refreshes its drawer setup and recreates all its children.</para>
+            </summary>
+            <example>
+            <para>The following example demonstrates how OnInspectorInit works.</para>
+            <code>
+            public class MyComponent : MonoBehaviour
+            {
+                // Display current time for reference.
+                [ShowInInspector, DisplayAsString, PropertyOrder(-1)]
+                public string CurrentTime { get { GUIHelper.RequestRepaint(); return DateTime.Now.ToString(); } }
+                
+                // OnInspectorInit executes the first time this string is about to be drawn in the inspector.
+                // It will execute again when the example is reselected.
+                [OnInspectorInit("@TimeWhenExampleWasOpened = DateTime.Now.ToString()")]
+                public string TimeWhenExampleWasOpened;
+                
+                // OnInspectorInit will not execute before the property is actually "resolved" in the inspector.
+                // Remember, Odin's property system is lazily evaluated, and so a property does not actually exist
+                // and is not initialized before something is actually asking for it.
+                // 
+                // Therefore, this OnInspectorInit attribute won't execute until the foldout is expanded.
+                [FoldoutGroup("Delayed Initialization", Expanded = false, HideWhenChildrenAreInvisible = false)]
+                [OnInspectorInit("@TimeFoldoutWasOpened = DateTime.Now.ToString()")]
+                public string TimeFoldoutWasOpened;
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Sirenix.OdinInspector.OnInspectorInitAttribute.#ctor">
+            <summary>
+            This constructor should be used when the attribute is placed directly on a method.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.OnInspectorInitAttribute.#ctor(System.String)">
+            <summary>
+            This constructor should be used when the attribute is placed on a non-method member.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.OnStateUpdateAttribute">
+             <summary>
+             <para>
+                OnStateUpdate provides an event callback when the property's state should be updated, when the StateUpdaters run on the property instance.
+                This generally happens at least once per frame, and the callback will be invoked even when the property is not visible. This can be used to
+                approximate custom StateUpdaters like [ShowIf] without needing to make entire attributes and StateUpdaters for one-off cases.
+             </para>
+             </summary>
+             <example>
+             <para>The following example shows how OnStateUpdate can be used to control the visible state of a property.</para>
+             <code>
+             public class MyComponent : MonoBehaviour
+             {
+            		[OnStateUpdate("@$property.State.Visible = ToggleMyInt")]
+            		public int MyInt;
+            
+            		public bool ToggleMyInt;
+             }
+             </code>
+             </example>
+             <example>
+             <para>The following example shows how OnStateUpdate can be used to control the expanded state of a list.</para>
+             <code>
+             public class MyComponent : MonoBehaviour
+             {
+            		[OnStateUpdate("@$property.State.Expanded = ExpandList")]
+            		public List&lt;string&gt; list;
+            		
+            		public bool ExpandList;
+             }
+             </code>
+             <para>The following example shows how OnStateUpdate can be used to control the state of another property.</para>
+             <code>
+             public class MyComponent : MonoBehaviour
+             {
+            		public List&gt;string&lt; list;
+            		
+            		[OnStateUpdate("@#(list).State.Expanded = $value")]
+            		public bool ExpandList;
+             }
+             </code>
+             </example>
         </member>
         <member name="T:Sirenix.OdinInspector.PreviewFieldAttribute">
              <summary>
@@ -740,6 +1223,26 @@
              </example>
              <seealso cref="T:Sirenix.OdinInspector.TitleAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.PreviewFieldAttribute.Height">
+            <summary>
+            The height of the object field
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.PreviewFieldAttribute.Alignment">
+            <summary>
+            Left aligned.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.PreviewFieldAttribute.AlignmentHasValue">
+            <summary>
+            Whether an alignment value is specified.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PreviewFieldAttribute.#ctor">
+            <summary>
+            Draws a square object field which renders a preview for UnityEngine.Object type objects.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.PreviewFieldAttribute.#ctor(System.Single)">
             <summary>
             Draws a square object field which renders a preview for UnityEngine.Object type objects.
@@ -758,26 +1261,6 @@
             Draws a square object field which renders a preview for UnityEngine.Object type objects.
             </summary>
             <param name="alignment">The alignment of the preview field.</param>
-        </member>
-        <member name="M:Sirenix.OdinInspector.PreviewFieldAttribute.#ctor">
-            <summary>
-            Draws a square object field which renders a preview for UnityEngine.Object type objects.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.PreviewFieldAttribute.Height">
-            <summary>
-            The height of the object field
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.PreviewFieldAttribute.Alignment">
-            <summary>
-            Left aligned.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.PreviewFieldAttribute.AlignmentHasValue">
-            <summary>
-            Whether an alignment value is specified.
-            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.ProgressBarAttribute">
              <summary>
@@ -838,12 +1321,106 @@
             		// Custom color and height.
             		[ProgressBar(-100, 100, r: 1, g: 1, b: 1, Height = 30)]
             		public short BigProgressBar = 50;
+            		
+                 // You can also reference members by name to dynamically assign the min and max progress bar values.
+                 [ProgressBar("DynamicMin", "DynamicMax")]
+                 public float DynamicProgressBar;
+                 
+                 public float DynamicMin, DynamicMax;
              }
              </code>
              </example>
              <seealso cref="T:Sirenix.OdinInspector.HideLabelAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.PropertyRangeAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.MinMaxSliderAttribute"/>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.Min">
+            <summary>
+            The minimum value.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.Max">
+            <summary>
+            The maximum value.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.MinMember">
+            <summary>
+            The name of a field, property or method to get the min values from. Obsolete; use the MinGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.MinGetter">
+            <summary>
+            A resolved string that should evaluate to a float value, and will be used as the min bounds.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.MaxMember">
+            <summary>
+            The name of a field, property or method to get the max values from. Obsolete; use the MaxGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.MaxGetter">
+            <summary>
+            A resolved string that should evaluate to a float value, and will be used as the max bounds.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.R">
+            <summary>
+            The red channel of the color of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.G">
+            <summary>
+            The green channel of the color of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.B">
+            <summary>
+            The blue channel of the color of the progress bar.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.Height">
+            <summary>
+            The height of the progress bar in pixels. Defaults to 12 pixels.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.ColorMember">
+            <summary>
+            Optional reference to a Color field, property or method, to dynamically change the color of the progress bar. Obsolete; use the ColorGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.ColorGetter">
+            <summary>
+            Optional resolved string that should evaluate to a Color value, to dynamically change the color of the progress bar. 
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.BackgroundColorMember">
+            <summary>
+            Optional reference to a Color field, property or method, to dynamically change the background color of the progress bar.
+            Default background color is (0.16, 0.16, 0.16, 1).
+            Obsolete; use the BackgroundColorGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.BackgroundColorGetter">
+            <summary>
+            Optional resolved string that should evaluate to a Color value, to dynamically change the background color of the progress bar.
+            Default background color is (0.16, 0.16, 0.16, 1).
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.Segmented">
+            <summary>
+            If <c>true</c> then the progress bar will be drawn in tiles.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.CustomValueStringMember">
+            <summary>
+            References a member by name to get a custom value label string from. Obsolete; use the CustomValueStringGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ProgressBarAttribute.CustomValueStringGetter">
+            <summary>
+            A resolved string to get a custom value label string from.
+            </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.ProgressBarAttribute.#ctor(System.Double,System.Double,System.Single,System.Single,System.Single)">
             <summary>
@@ -855,51 +1432,35 @@
             <param name="g">The green channel of the color of the progress bar.</param>
             <param name="b">The blue channel of the color of the progress bar.</param>
         </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.Min">
+        <member name="M:Sirenix.OdinInspector.ProgressBarAttribute.#ctor(System.String,System.Double,System.Single,System.Single,System.Single)">
             <summary>
-            The minimum value.
+            Draws a progress bar for the value.
             </summary>
+            <param name="minGetter">A resolved string that should evaluate to a float value, and will be used as the min bounds.</param>
+            <param name="max">The maximum value.</param>
+            <param name="r">The red channel of the color of the progress bar.</param>
+            <param name="g">The green channel of the color of the progress bar.</param>
+            <param name="b">The blue channel of the color of the progress bar.</param>
         </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.Max">
+        <member name="M:Sirenix.OdinInspector.ProgressBarAttribute.#ctor(System.Double,System.String,System.Single,System.Single,System.Single)">
             <summary>
-            The maxium value.
+            Draws a progress bar for the value.
             </summary>
+            <param name="min">The minimum value.</param>
+            <param name="maxGetter">A resolved string that should evaluate to a float value, and will be used as the max bounds.</param>
+            <param name="r">The red channel of the color of the progress bar.</param>
+            <param name="g">The green channel of the color of the progress bar.</param>
+            <param name="b">The blue channel of the color of the progress bar.</param>
         </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.R">
+        <member name="M:Sirenix.OdinInspector.ProgressBarAttribute.#ctor(System.String,System.String,System.Single,System.Single,System.Single)">
             <summary>
-            The red channel of the color of the progress bar.
+            Draws a progress bar for the value.
             </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.G">
-            <summary>
-            The green channel of the color of the progress bar.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.B">
-            <summary>
-            The blue channel of the color of the progress bar.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.Height">
-            <summary>
-            The height of the progress bar in pixels. Defaults to 12 pixels.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.ColorMember">
-            <summary>
-            Optional reference to a Color field, property or method, to dynamically change the color of the progress bar.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.BackgroundColorMember">
-            <summary>
-            Optional reference to a Color field, property or method, to dynamically change the background color of the progress bar.
-            Default background color is (0.16, 0.16, 0.16, 1).
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.Segmented">
-            <summary>
-            If <c>true</c> then the progress bar will be drawn in tiles.
-            </summary>
+            <param name="minGetter">A resolved string that should evaluate to a float value, and will be used as the min bounds.</param>
+            <param name="maxGetter">A resolved string that should evaluate to a float value, and will be used as the max bounds.</param>
+            <param name="r">The red channel of the color of the progress bar.</param>
+            <param name="g">The green channel of the color of the progress bar.</param>
+            <param name="b">The blue channel of the color of the progress bar.</param>
         </member>
         <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.DrawValueLabel">
             <summary>
@@ -918,12 +1479,7 @@
         </member>
         <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.ValueLabelAlignmentHasValue">
             <summary>
-            Gets a value indiciating if the user has set a custom ValueLabelAlignemnt value.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ProgressBarAttribute.CustomValueStringMember">
-            <summary>
-            References a member by name to get a custom value label string from.
+            Gets a value indicating if the user has set a custom ValueLabelAlignment value.
             </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.PropertyRangeAttribute">
@@ -943,17 +1499,47 @@
             	
             	[PropertyRange(-100, -50)]
             	public decimal MyDouble;
+            	
+                // This attribute also supports dynamically referencing members by name to assign the min and max values for the range field.
+                [PropertyRange("DynamicMin", "DynamicMax"]
+                public float MyDynamicValue;
+                
+                public float DynamicMin, DynamicMax;
             }
             </code>
+            <seealso cref="T:Sirenix.OdinInspector.ShowInInspectorAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.PropertySpaceAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.PropertyTooltipAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.PropertyOrderAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.PropertyRangeAttribute.Min">
+        <member name="F:Sirenix.OdinInspector.PropertyRangeAttribute.Min">
             <summary>
             The minimum value.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.PropertyRangeAttribute.Max">
+        <member name="F:Sirenix.OdinInspector.PropertyRangeAttribute.Max">
             <summary>
             The maximum value.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.PropertyRangeAttribute.MinMember">
+            <summary>
+            The name of a field, property or method to get the min value from. Obsolete; use the MinGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.PropertyRangeAttribute.MinGetter">
+            <summary>
+            A resolved string that should evaluate to a float value, and will be used as the min bounds.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.PropertyRangeAttribute.MaxMember">
+            <summary>
+            The name of a field, property or method to get the max value from. Obsolete; use the MaxGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.PropertyRangeAttribute.MaxGetter">
+            <summary>
+            A resolved string that should evaluate to a float value, and will be used as the max bounds.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.Double,System.Double)">
@@ -963,10 +1549,235 @@
             <param name="min">The minimum value.</param>
             <param name="max">The maximum value.</param>
         </member>
+        <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.String,System.Double)">
+            <summary>
+            Creates a slider control to set the value of the property to between the specified range..
+            </summary>
+            <param name="minGetter">A resolved string that should evaluate to a float value, and will be used as the min bounds.</param>
+            <param name="max">The maximum value.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.Double,System.String)">
+            <summary>
+            Creates a slider control to set the value of the property to between the specified range..
+            </summary>
+            <param name="min">The minimum value.</param>
+            <param name="maxGetter">A resolved string that should evaluate to a float value, and will be used as the max bounds.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Creates a slider control to set the value of the property to between the specified range..
+            </summary>
+            <param name="minGetter">A resolved string that should evaluate to a float value, and will be used as the min bounds.</param>
+            <param name="maxGetter">A resolved string that should evaluate to a float value, and will be used as the max bounds.</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.PropertySpaceAttribute">
+            <summary>
+            <para>The PropertySpace attribute have the same function as Unity's existing Space attribute, but can be applied anywhere as opposed to just fields.</para>
+            </summary>
+            <example>
+            <para>The following example demonstrates the usage of the PropertySpace attribute.</para>
+            <code>
+            [PropertySpace] // Defaults to a space of 8 pixels just like Unity's Space attribute.
+            public int MyField;
+            
+            [ShowInInspector, PropertySpace(16)]
+            public int MyProperty { get; set; }
+            
+            [ShowInInspector, PropertySpace(16, 16)]
+            public int MyProperty { get; set; }
+            
+            [Button, PropertySpace(32)]
+            public void MyMethod()
+            {
+                ...
+            }
+            
+            [PropertySpace(-8)] // A negative space can also be remove existing space between properties.
+            public int MovedUp;
+            </code>
+            </example>
+            <seealso cref="T:Sirenix.OdinInspector.ShowInInspectorAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.PropertyRangeAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.PropertyTooltipAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.PropertyOrderAttribute"/>
+        </member>
+        <member name="F:Sirenix.OdinInspector.PropertySpaceAttribute.SpaceBefore">
+            <summary>
+            The space between properties in pixels.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.PropertySpaceAttribute.SpaceAfter">
+            <summary>
+            The space between properties in pixels.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertySpaceAttribute.#ctor">
+            <summary>
+            Adds a space of 8 pixels between properties.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertySpaceAttribute.#ctor(System.Single)">
+            <summary>
+            Adds a space between properties.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertySpaceAttribute.#ctor(System.Single,System.Single)">
+            <summary>
+            Adds a space between properties.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.ResponsiveButtonGroupAttribute">
+            <summary>
+            Groups buttons into a group that will position and resize the buttons based on the amount of available layout space.
+            </summary>
+            <example>
+            <code>
+            [ResponsiveButtonGroup]
+            public void Foo() { }
+            
+            [ResponsiveButtonGroup]
+            public void Bar() { }
+            
+            [ResponsiveButtonGroup]
+            public void Baz() { }
+            </code>
+            </example>
+            <example>
+            <code>
+            [ResponsiveButtonGroup(UniformLayout = true)]
+            public void Foo() { }
+            
+            [ResponsiveButtonGroup]
+            public void Bar() { }
+            
+            [ResponsiveButtonGroup]
+            public void Baz() { }
+            </code>
+            </example>
+            <example>
+            <code>
+            [ResponsiveButtonGroupAttribute(UniformLayout = true, DefaultButtonSize = ButtonSizes.Large)]
+            public void Foo() { }
+            
+            [GUIColor(0, 1, 0))]
+            [Button(ButtonSizes.Large)]
+            [ResponsiveButtonGroup]
+            public void Bar() { }
+            
+            [ResponsiveButtonGroup]
+            public void Baz() { }
+            </code>
+            </example>
+            <example>
+            <code>
+            [TabGroup("SomeTabGroup", "SomeTab")]
+            [ResponsiveButtonGroup("SomeTabGroup/SomeTab/SomeBtnGroup")]
+            public void Foo() { }
+            
+            [ResponsiveButtonGroup("SomeTabGroup/SomeTab/SomeBtnGroup")]
+            public void Bar() { }
+            
+            [ResponsiveButtonGroup("SomeTabGroup/SomeTab/SomeBtnGroup")]
+            public void Baz() { }
+            </code>
+            </example>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ResponsiveButtonGroupAttribute.DefaultButtonSize">
+            <summary>
+            The default size of the button.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ResponsiveButtonGroupAttribute.UniformLayout">
+            <summary>
+            If <c>true</c> then the widths of a line of buttons will be the same.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ResponsiveButtonGroupAttribute.#ctor(System.String)">
+            <summary>
+            Draws a button that will be placed in a group that will respond to the horizontal space available to the group.
+            </summary>
+            <param name="group">The name of the group to place the button in.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ResponsiveButtonGroupAttribute.CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute)">
+            <summary>
+            Merges the values of this group with another ResponsiveButtonGroupAttribute.
+            </summary>
+            <param name="other">The attribute to combine with.</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.ShowIfGroupAttribute">
+            <summary>
+            <p>ShowIfGroup allows for showing or hiding a group of properties based on a condition.</p>
+            <p>The attribute is a group attribute and can therefore be combined with other group attributes, and even be used to show or hide entire groups.</p>
+            <p>Note that in the vast majority of cases where you simply want to be able to control the visibility of a single group, it is better to use the VisibleIf parameter that *all* group attributes have.</p>
+            </summary>
+            <seealso cref="T:Sirenix.OdinInspector.ShowIfAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.HideIfAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.HideIfGroupAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.ShowInInspectorAttribute"/>
+            <seealso cref="T:UnityEngine.HideInInspector"/>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ShowIfGroupAttribute.Animate">
+            <summary>
+            Whether or not to visually animate group visibility changes. Alias for AnimateVisibility.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ShowIfGroupAttribute.Value">
+            <summary>
+            The optional member value.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ShowIfGroupAttribute.MemberName">
+            <summary>
+            Name of member to use when to hide the group. Defaults to the name of the group, by can be overriden by setting this property.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ShowIfGroupAttribute.Condition">
+            <summary>
+            A resolved string that defines the condition to check the value of, such as a member name or an expression.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ShowIfGroupAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Makes a group that can be shown or hidden based on a condition.
+            </summary>
+            <param name="path">The group path.</param>
+            <param name="animate">If <c>true</c> then a fade animation will be played when the group is hidden or shown.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ShowIfGroupAttribute.#ctor(System.String,System.Object,System.Boolean)">
+            <summary>
+            Makes a group that can be shown or hidden based on a condition.
+            </summary>
+            <param name="path">The group path.</param>
+            <param name="value">The value the member should equal for the property to shown.</param>
+            <param name="animate">If <c>true</c> then a fade animation will be played when the group is hidden or shown.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ShowIfGroupAttribute.CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute)">
+            <summary>
+            Combines ShowIfGroup attributes.
+            </summary>
+            <param name="other">Another ShowIfGroup attribute.</param>
+        </member>
         <member name="T:Sirenix.OdinInspector.ShowInInlineEditorsAttribute">
             <summary>
-            Hides a property if it is drawn within an <see cref="T:Sirenix.OdinInspector.InlineEditorAttribute"/>.
+            Only shows a property if it is drawn within an <see cref="T:Sirenix.OdinInspector.InlineEditorAttribute"/>.
             </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.ShowPropertyResolverAttribute">
+            <summary>
+            <para>
+            ShowPropertyResolver shows the property resolver responsible for bringing the member into the property tree.
+            This is useful in situations where you want to debug why a particular member that is normally not shown in the inspector suddenly is.
+            </para>
+            </summary>
+            <example>
+            <code>
+            public class MyComponent : MonoBehaviour
+            {
+            	[ShowPropertyResolver]
+            	public int IndentedInt;
+            }
+            </code>
+            </example>
         </member>
         <member name="T:Sirenix.OdinInspector.SuffixLabelAttribute">
              <summary>
@@ -976,7 +1787,7 @@
              Using SuffixLabel, you can place a neat label at the end of a property, to clearly show how the the property is used.</para>
              </summary>
              <example>
-             <para>The following examples demonstrates how SuffixLabel is used.</para>
+             <para>The following example demonstrates how SuffixLabel is used.</para>
              <code>
             	public class MyComponent : MonoBehaviour
             	{
@@ -1005,6 +1816,16 @@
              <seealso cref="T:Sirenix.OdinInspector.InlineButtonAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.LabelWidthAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.SuffixLabelAttribute.Label">
+            <summary>
+            The label displayed at the end of the property.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.SuffixLabelAttribute.Overlay">
+            <summary>
+            If <c>true</c> the suffix label will be drawn on top of the property, instead of after.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.SuffixLabelAttribute.#ctor(System.String,System.Boolean)">
             <summary>
             Draws a label at the end of the property.
@@ -1012,45 +1833,122 @@
             <param name="label">The text of the label.</param>
             <param name="overlay">If <c>true</c> the suffix label will be drawn on top of the property, instead of after.</param>
         </member>
-        <member name="P:Sirenix.OdinInspector.SuffixLabelAttribute.Label">
-            <summary>
-            The label displayed at the end of the property.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.SuffixLabelAttribute.Overlay">
-            <summary>
-            If <c>true</c> the suffix label will be drawn on top of the property, instead of after.
-            </summary>
-        </member>
         <member name="T:Sirenix.OdinInspector.TableColumnWidthAttribute">
             <summary>
-            TODO: Document
+            The TableColumnWidth attribute is used to further customize the width of a column in tables drawn using the <see cref="T:Sirenix.OdinInspector.TableListAttribute"/>.
             </summary>
+            <example>
+            <code>
+            [TableList]
+            public List&lt;SomeType&gt; TableList = new List&lt;SomeType&gt;();
+            
+            [Serializable]
+            public class SomeType
+            {
+                [LabelWidth(30)]
+                [TableColumnWidth(130, false)]
+                [VerticalGroup("Combined")]
+                public string A;
+            
+                [LabelWidth(30)]
+                [VerticalGroup("Combined")]
+                public string B;
+            
+                [Multiline(2), Space(3)]
+                public string fields;
+            }
+            </code>
+            </example>
+            <seealso cref="T:Sirenix.OdinInspector.TableListAttribute"/>
         </member>
         <member name="F:Sirenix.OdinInspector.TableColumnWidthAttribute.Width">
             <summary>
-            TODO: Document
+            The width of the column.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.TableColumnWidthAttribute.#ctor(System.Int32)">
+        <member name="F:Sirenix.OdinInspector.TableColumnWidthAttribute.Resizable">
             <summary>
-            TODO: Document
+            Whether the column should be resizable. True by default.
             </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.TableColumnWidthAttribute.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.TableColumnWidthAttribute"/> class.
+            </summary>
+            <param name="width">The width of the column in pixels.</param>
+            <param name="resizable">If <c>true</c> then the column can be resized in the inspector.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.TableListAttribute">
             <summary>
             Renders lists and arrays in the inspector as tables.
             </summary>
+            <seealso cref="T:Sirenix.OdinInspector.TableColumnWidthAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.TableColumnWidthAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.TableListAttribute.NumberOfItemsPerPage">
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.NumberOfItemsPerPage">
             <summary>
-            Override the default setting specified in the Advanced Odin Preferences window and explicitly tells how many items each page should contain.
+            If ShowPaging is enabled, this will override the default setting specified in the Odin Preferences window.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TableListAttribute.IsReadOnly">
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.IsReadOnly">
             <summary>
             Mark the table as read-only. This removes all editing capabilities from the list such as Add and delete,
             but without disabling GUI for each element drawn as otherwise would be the case if the <see cref="T:Sirenix.OdinInspector.ReadOnlyAttribute"/> was used.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.DefaultMinColumnWidth">
+            <summary>
+            The default minimum column width - 40 by default. This can be overwriten by individual columns using the <see cref="T:Sirenix.OdinInspector.TableColumnWidthAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.ShowIndexLabels">
+            <summary>
+            If true, a label is drawn for each element which shows the index of the element.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.DrawScrollView">
+            <summary>
+            Whether to draw all rows in a scroll-view.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.MinScrollViewHeight">
+            <summary>
+            The number of pixels before a scroll view appears. 350 by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.MaxScrollViewHeight">
+            <summary>
+            The number of pixels before a scroll view appears. 0 by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.AlwaysExpanded">
+            <summary>
+            If true, expanding and collapsing the table from the table title-bar is no longer an option.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.HideToolbar">
+            <summary>
+            Whether to hide the toolbar containing the add button and pagin etc.s
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableListAttribute.CellPadding">
+            <summary>
+            The cell padding.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TableListAttribute.ShowPaging">
+            <summary>
+            Whether paging buttons should be added to the title bar. The default value of this, can be customized from the Odin Preferences window.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TableListAttribute.ShowPagingHasValue">
+            <summary>
+            Whether the ShowPaging property has been set.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TableListAttribute.ScrollViewHeight">
+            <summary>
+            Sets the Min and Max ScrollViewHeight.
             </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.TableMatrixAttribute">
@@ -1128,14 +2026,12 @@
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.TableMatrixAttribute.DrawElementMethod">
-             <summary>
-             Override how Odin draws each cell.                  <para />
-            
-             [TableMatrix(DrawElementMethod='DrawMyElement')]    <para />
-             public MyType[,] myArray;                           <para />
-            
-             private static MyType DrawElement(Rect rect, MyType value) { return GUI.DrawMyType(rect, value); }
-             </summary>
+            <summary>
+            Override how Odin draws each cell.                  <para />
+            [TableMatrix(DrawElementMethod='DrawMyElement')]    <para />
+            public MyType[,] myArray;                           <para />
+            private static MyType DrawElement(Rect rect, MyType value) { return GUI.DrawMyType(rect, value); }
+            </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.TableMatrixAttribute.RowHeight">
             <summary>
@@ -1157,13 +2053,78 @@
             If true, no row indices drawn.
             </summary>
         </member>
+        <member name="F:Sirenix.OdinInspector.TableMatrixAttribute.RespectIndentLevel">
+            <summary>
+            Whether the drawn table should respect the current GUI indent level.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableMatrixAttribute.Transpose">
+            <summary>
+            If true, tables are drawn with rows/columns reversed (C# initialization order).
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TypeFilterAttribute.MemberName">
+            <summary>
+            Name of any field, property or method member that implements IList. E.g. arrays or Lists. Obsolete; use the FilterGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TypeFilterAttribute.FilterGetter">
+            <summary>
+            A resolved string that should evaluate to a value that is assignable to IList; e.g, arrays and lists are compatible.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TypeFilterAttribute.DropdownTitle">
+            <summary>
+            Gets or sets the title for the dropdown. Null by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TypeFilterAttribute.DrawValueNormally">
+            <summary>
+            If true, the value will be drawn normally after the type selector dropdown has been drawn. False by default.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.TypeFilterAttribute.#ctor(System.String)">
+            <summary>
+            Creates a dropdown menu for a property.
+            </summary>
+            <param name="filterGetter">A resolved string that should evaluate to a value that is assignable to IList; e.g, arrays and lists are compatible.</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.TypeInfoBoxAttribute">
+            <summary>
+            <para>The TypeInfoBox attribute adds an info box to the very top of a type in the inspector.</para>
+            <para>Use this to add an info box to the top of a class in the inspector, without having to use neither the PropertyOrder nor the OnInspectorGUI attribute.</para>
+            </summary>
+            <example>
+            <para>The following example demonstrates the use of the TypeInfoBox attribute.</para>
+            <code>
+            [TypeInfoBox("This is my component and it is mine.")]
+            public class MyComponent : MonoBehaviour
+            {
+                // Class implementation.
+            }
+            </code>
+            </example>
+            <seealso cref="T:Sirenix.OdinInspector.InfoBoxAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.DetailedInfoBoxAttribute"/>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TypeInfoBoxAttribute.Message">
+            <summary>
+            The message to display in the info box.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.TypeInfoBoxAttribute.#ctor(System.String)">
+            <summary>
+            Draws an info box at the top of a type in the inspector.
+            </summary>
+            <param name="message">The message to display in the info box.</param>
+        </member>
         <member name="T:Sirenix.OdinInspector.VerticalGroupAttribute">
             <summary>
             <para>VerticalGroup is used to gather properties together in a vertical group in the inspector.</para>
             <para>This doesn't do much in and of itself, but in combination with other groups, such as <see cref="T:Sirenix.OdinInspector.HorizontalGroupAttribute"/> it can be very useful.</para>
             </summary>
             <example>
-            <para>The following example demonstrates how VerticalGroup can be used in conjuction with <see cref="T:Sirenix.OdinInspector.HorizontalGroupAttribute"/></para>
+            <para>The following example demonstrates how VerticalGroup can be used in conjunction with <see cref="T:Sirenix.OdinInspector.HorizontalGroupAttribute"/></para>
             <code>
             public class MyComponent : MonoBehaviour
             {
@@ -1191,24 +2152,24 @@
             <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.ButtonGroupAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.VerticalGroupAttribute.PaddingTop">
+        <member name="F:Sirenix.OdinInspector.VerticalGroupAttribute.PaddingTop">
             <summary>
             Space in pixels at the top of the group.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.VerticalGroupAttribute.PaddingBottom">
+        <member name="F:Sirenix.OdinInspector.VerticalGroupAttribute.PaddingBottom">
             <summary>
             Space in pixels at the bottom of the group.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.VerticalGroupAttribute.#ctor(System.String,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.VerticalGroupAttribute.#ctor(System.String,System.Single)">
             <summary>
             Groups properties vertically.
             </summary>
             <param name="groupId">The group ID.</param>
             <param name="order">The group order.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.VerticalGroupAttribute.#ctor(System.Int32)">
+        <member name="M:Sirenix.OdinInspector.VerticalGroupAttribute.#ctor(System.Single)">
             <summary>
             <para>Groups properties vertically.</para>
             <para>GroupId: _DefaultVerticalGroup</para>
@@ -1219,6 +2180,100 @@
             <summary>
             Combines properties that have been group vertically.
             </summary>
+            <param name="other">The group attribute to combine with.</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.AttributeTargetFlags">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.AttributeTargetFlags.Default">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.SearchableAttribute">
+            <summary>
+            Adds a search filter that can search the children of the field or type on
+            which it is applied. Note that this does not currently work when directly
+            applied to dictionaries, though a search field "above" the dictionary will
+            still search the dictionary's properties if it is searching recursively.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.SearchableAttribute.FuzzySearch">
+            <summary>
+            Whether to use fuzzy string matching for the search.
+            Default value: true.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.SearchableAttribute.FilterOptions">
+            <summary>
+            The options for which things to use to filter the search.
+            Default value: All.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.SearchableAttribute.Recursive">
+            <summary>
+            Whether to search recursively, or only search the top level properties.
+            Default value: true.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.IncludeMyAttributesAttribute">
+            <summary>
+            When this attribute is added is added to another attribute, then attributes from that attribute
+            will also be added to the property in the attribute processing step.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.InlineEditorObjectFieldModes">
+            <summary>
+            How the InlineEditor attribute drawer should draw the object field.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineEditorObjectFieldModes.Boxed">
+            <summary>
+            Draws the object field in a box.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineEditorObjectFieldModes.Foldout">
+            <summary>
+            Draws the object field with a foldout.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineEditorObjectFieldModes.Hidden">
+            <summary>
+            Hides the object field unless it's null.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineEditorObjectFieldModes.CompletelyHidden">
+            <summary>
+            Hidden the object field also when the object is null.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.ISearchFilterable">
+            <summary>
+            Implement this interface to create custom matching
+            logic for search filtering in the inspector.
+            </summary>
+            <example>
+            <para>The following example shows how you might do this:</para>
+            <code>
+            public class MyCustomClass : ISearchFilterable
+            {
+                public bool SearchEnabled;
+                public string MyStr;
+                
+                public bool IsMatch(string searchString)
+                {
+                    if (SearchEnabled)
+                    {
+                        return MyStr.Contains(searchString);
+                    }
+                    
+                    return false;
+                }
+            }
+            </code>
+            </example>
         </member>
         <member name="T:Sirenix.OdinInspector.ObjectFieldAlignment">
             <summary>
@@ -1233,12 +2288,17 @@
         </member>
         <member name="F:Sirenix.OdinInspector.ObjectFieldAlignment.Center">
             <summary>
-            Centered.
+            Aligned to the center.
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.ObjectFieldAlignment.Right">
             <summary>
             Right aligned.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.SearchFilterOptions">
+            <summary>
+            Options for filtering search.
             </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.TitleAlignments">
@@ -1273,32 +2333,32 @@
             Groups properties vertically together with a title, an optional subtitle, and an optional horizontal line. 
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.Subtitle">
+        <member name="F:Sirenix.OdinInspector.TitleGroupAttribute.Subtitle">
             <summary>
             Optional subtitle.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.Alignment">
+        <member name="F:Sirenix.OdinInspector.TitleGroupAttribute.Alignment">
             <summary>
             Title alignment.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.HorizontalLine">
+        <member name="F:Sirenix.OdinInspector.TitleGroupAttribute.HorizontalLine">
             <summary>
             Gets a value indicating whether or not to draw a horizontal line below the title.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.BoldTitle">
+        <member name="F:Sirenix.OdinInspector.TitleGroupAttribute.BoldTitle">
             <summary>
-            If <c>true</c> the title will be dispalyed with a bold font.
+            If <c>true</c> the title will be displayed with a bold font.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.Indent">
+        <member name="F:Sirenix.OdinInspector.TitleGroupAttribute.Indent">
             <summary>
             Gets a value indicating whether or not to indent all group members.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.TitleGroupAttribute.#ctor(System.String,System.String,Sirenix.OdinInspector.TitleAlignments,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.TitleGroupAttribute.#ctor(System.String,System.String,Sirenix.OdinInspector.TitleAlignments,System.Boolean,System.Boolean,System.Boolean,System.Single)">
             <summary>
             Groups properties vertically together with a title, an optional subtitle, and an optional horizontal line. 
             </summary>
@@ -1314,6 +2374,7 @@
             <summary>
             Combines TitleGroup attributes.
             </summary>
+            <param name="other">The other group attribute to combine with.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.ButtonSizes">
             <summary>
@@ -1324,7 +2385,6 @@
             <summary>
             Small button size, fits well with properties in the inspector.
             </summary>
-            
         </member>
         <member name="F:Sirenix.OdinInspector.ButtonSizes.Medium">
             <summary>
@@ -1373,6 +2433,16 @@
             </code>
             </example>
         </member>
+        <member name="F:Sirenix.OdinInspector.ColorPaletteAttribute.PaletteName">
+            <summary>
+            Gets the name of the palette.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ColorPaletteAttribute.ShowAlpha">
+            <summary>
+            Indicates if the color palette should show alpha values or not.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.ColorPaletteAttribute.#ctor">
             <summary>
             Adds a color palette options to a Color property.
@@ -1383,16 +2453,6 @@
             Adds color options to a Color property from a specific palette.
             </summary>
             <param name="paletteName">Name of the palette.</param>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ColorPaletteAttribute.PaletteName">
-            <summary>
-            Gets the name of the palette.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ColorPaletteAttribute.ShowAlpha">
-            <summary>
-            Indicates if the color palette should show alpha values or not.
-            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.CustomContextMenuAttribute">
              <summary>
@@ -1419,22 +2479,27 @@
              </example>
              <seealso cref="T:Sirenix.OdinInspector.DisableContextMenuAttribute"/>
         </member>
-        <member name="M:Sirenix.OdinInspector.CustomContextMenuAttribute.#ctor(System.String,System.String)">
-            <summary>
-            Adds a custom option to the context menu of the property.
-            </summary>
-            <param name="menuItem">The name of the menu item.</param>
-            <param name="methodName">The name of the callback method.</param>
-        </member>
-        <member name="P:Sirenix.OdinInspector.CustomContextMenuAttribute.MenuItem">
+        <member name="F:Sirenix.OdinInspector.CustomContextMenuAttribute.MenuItem">
             <summary>
             The name of the menu item.
             </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.CustomContextMenuAttribute.MethodName">
             <summary>
-            The name of the callback method.
+            The name of the callback method. Obsolete; use the Action member instead.
             </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.CustomContextMenuAttribute.Action">
+            <summary>
+            A resolved string defining the action to take when the context menu is clicked.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.CustomContextMenuAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Adds a custom option to the context menu of the property.
+            </summary>
+            <param name="menuItem">The name of the menu item.</param>
+            <param name="action">A resolved string defining the action to take when the context menu is clicked.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.DelayedPropertyAttribute">
             <summary>
@@ -1459,22 +2524,22 @@
             </example>
             <seealso cref="T:Sirenix.OdinInspector.InfoBoxAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.DetailedInfoBoxAttribute.Message">
+        <member name="F:Sirenix.OdinInspector.DetailedInfoBoxAttribute.Message">
             <summary>
             The message for the message box.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.DetailedInfoBoxAttribute.Details">
+        <member name="F:Sirenix.OdinInspector.DetailedInfoBoxAttribute.Details">
             <summary>
             The hideable details of the message box.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.DetailedInfoBoxAttribute.InfoMessageType">
+        <member name="F:Sirenix.OdinInspector.DetailedInfoBoxAttribute.InfoMessageType">
             <summary>
             Type of the message box.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.DetailedInfoBoxAttribute.VisibleIf">
+        <member name="F:Sirenix.OdinInspector.DetailedInfoBoxAttribute.VisibleIf">
             <summary>
             Optional name of a member to hide or show the message box.
             </summary>
@@ -1520,24 +2585,29 @@
             Customize the behavior for dictionaries in the inspector.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.DictionaryDrawerSettings.DisplayMode">
-            <summary>
-            Specify how the dictionary should draw its items.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.DictionaryDrawerSettings.IsReadOnly">
-            <summary>
-            Gets or sets a value indicating whether this instance is read only.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.DictionaryDrawerSettings.KeyLabel">
+        <member name="F:Sirenix.OdinInspector.DictionaryDrawerSettings.KeyLabel">
             <summary>
             Specify an alternative key label for the dictionary drawer.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.DictionaryDrawerSettings.ValueLabel">
+        <member name="F:Sirenix.OdinInspector.DictionaryDrawerSettings.ValueLabel">
             <summary>
             Specify an alternative value label for the dictionary drawer.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDrawerSettings.DisplayMode">
+            <summary>
+            Specify how the dictionary should draw its items.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDrawerSettings.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether this instance is read only.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDrawerSettings.KeyColumnWidth">
+            <summary>
+            Gets or sets a value indicating the default key column width of the dictionary.
             </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.DisableContextMenuAttribute">
@@ -1557,12 +2627,12 @@
             </example>
             <seealso cref="T:Sirenix.OdinInspector.CustomContextMenuAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.DisableContextMenuAttribute.DisableForMember">
+        <member name="F:Sirenix.OdinInspector.DisableContextMenuAttribute.DisableForMember">
             <summary>
             Whether to disable the context menu for the member itself.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.DisableContextMenuAttribute.DisableForCollectionElements">
+        <member name="F:Sirenix.OdinInspector.DisableContextMenuAttribute.DisableForCollectionElements">
             <summary>
             Whether to disable the context menu for collection elements.
             </summary>
@@ -1616,25 +2686,30 @@
         </member>
         <member name="P:Sirenix.OdinInspector.DisableIfAttribute.MemberName">
             <summary>
-            The name of a bool member field, property or method.
+            The name of a bool member field, property or method. Obsolete; use the Condition member instead.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.DisableIfAttribute.Value">
+        <member name="F:Sirenix.OdinInspector.DisableIfAttribute.Condition">
             <summary>
-            The optional member value.
+            A resolved string that defines the condition to check the value of, such as a member name or an expression.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DisableIfAttribute.Value">
+            <summary>
+            The optional condition value.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.DisableIfAttribute.#ctor(System.String)">
             <summary>
-            Disables a property in the inspector, based on the state of a member.
+            Disables a property in the inspector, based on the value of a resolved string.
             </summary>
-            <param name="memberName">Name of member bool field, property, or method.</param>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.DisableIfAttribute.#ctor(System.String,System.Object)">
             <summary>
-            Disables a property in the inspector, if the specified member returns the specified value.
+            Disables a property in the inspector, if the resolved string evaluates to the specified value.
             </summary>
-            <param name="memberName">Name of member to check value of.</param>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
             <param name="optionalValue">Value to check against.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.DisableInEditorModeAttribute">
@@ -1705,9 +2780,10 @@
              <seealso cref="T:Sirenix.OdinInspector.TitleAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.MultiLinePropertyAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.DisplayAsStringAttribute.Overflow">
+        <member name="F:Sirenix.OdinInspector.DisplayAsStringAttribute.Overflow">
             <summary>
-            If <c>true</c> the string will overflow to multiple lines, if there's not enough space when drawn.
+            If <c>true</c>, the string will overflow past the drawn space and be clipped when there's not enough space for the text.
+            If <c>false</c> the string will expand to multiple lines, if there's not enough space when drawn.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.DisplayAsStringAttribute.#ctor">
@@ -1719,7 +2795,7 @@
             <summary>
             Displays the property as a string in the inspector.
             </summary>
-            <param name="overflow">Value indicating if the string should overflow to multiple lines or not.</param>
+            <param name="overflow">Value indicating if the string should overflow past the available space, or expand to multiple lines when there's not enough horizontal space.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.DontApplyToListElementsAttribute">
             <summary>
@@ -1730,7 +2806,7 @@
             <para>The following example shows how DontApplyToListElements is used on <see cref="T:Sirenix.OdinInspector.ShowIfAttribute"/>.</para>
             <code>
             [DontApplyToListElements]
-            [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
+            [AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = true)]
             public sealed class VisibleIfAttribute : Attribute
             {
                 public string MemberName { get; private set; }
@@ -1784,19 +2860,29 @@
         </member>
         <member name="P:Sirenix.OdinInspector.InlineButtonAttribute.MemberMethod">
             <summary>
-            Name of member method to call when the button is clicked.
+            Name of member method to call when the button is clicked. Obsolete; use the Action member instead.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.InlineButtonAttribute.Label">
+        <member name="F:Sirenix.OdinInspector.InlineButtonAttribute.Action">
+            <summary>
+            A resolved string that defines the action to perform when the button is clicked, such as an expression or method invocation.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineButtonAttribute.Label">
             <summary>
             Optional label of the button.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineButtonAttribute.ShowIf">
+            <summary>
+            Optional resolved string that specifies a condition for whether to show the inline button or not.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.InlineButtonAttribute.#ctor(System.String,System.String)">
             <summary>
             Draws a button to the right of the property.
             </summary>
-            <param name="memberMethod">Name of member method to call when the button is clicked.</param>
+            <param name="action">A resolved string that defines the action to perform when the button is clicked, such as an expression or method invocation.</param>
             <param name="label">Optional label of the button.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.Internal.ISubGroupProviderAttribute">
@@ -1808,11 +2894,14 @@
             <summary>
             Not yet documented.
             </summary>
+            <returns>Not yet documented.</returns>
         </member>
         <member name="M:Sirenix.OdinInspector.Internal.ISubGroupProviderAttribute.RepathMemberAttribute(Sirenix.OdinInspector.PropertyGroupAttribute)">
             <summary>
             Not yet documented.
             </summary>
+            <param name="attr">Not yet documented.</param>
+            <returns>Not yet documented.</returns>
         </member>
         <member name="T:Sirenix.OdinInspector.ShowForPrefabOnlyAttribute">
             <summary>
@@ -1907,25 +2996,30 @@
         </member>
         <member name="P:Sirenix.OdinInspector.EnableIfAttribute.MemberName">
             <summary>
-            The name of a bool member field, property or method.
+            The name of a bool member field, property or method. Obsolete; use the Condition member instead.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.EnableIfAttribute.Value">
+        <member name="F:Sirenix.OdinInspector.EnableIfAttribute.Condition">
             <summary>
-            The optional member value.
+            A resolved string that defines the condition to check the value of, such as a member name or an expression.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.EnableIfAttribute.Value">
+            <summary>
+            The optional condition value.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.EnableIfAttribute.#ctor(System.String)">
             <summary>
-            Enables a property in the inspector, based on the state of a member.
+            Enables a property in the inspector, based on the value of a resolved string.
             </summary>
-            <param name="memberName">Name of member bool field, property, or method.</param>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.EnableIfAttribute.#ctor(System.String,System.Object)">
             <summary>
-            Enables a property in the inspector, if the specified member returns the specified value.
+            Enables a property in the inspector, if the resolved string evaluates to the specified value.
             </summary>
-            <param name="memberName">Name of member to check value of.</param>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
             <param name="optionalValue">Value to check against.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.EnumToggleButtonsAttribute">
@@ -1936,7 +3030,6 @@
              <code>
              public class MyComponent : MonoBehvaiour
              {
-            
                  [EnumToggleButtons]
                  public MyBitmaskEnum MyBitmaskEnum;
             
@@ -1962,11 +3055,6 @@
              </code>
              </example>
              <seealso cref="T:System.Attribute" />
-        </member>
-        <member name="M:Sirenix.OdinInspector.EnumToggleButtonsAttribute.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.EnumToggleButtonsAttribute"/> class.
-            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.HideIfAttribute">
              <summary>
@@ -2014,32 +3102,37 @@
         </member>
         <member name="P:Sirenix.OdinInspector.HideIfAttribute.MemberName">
             <summary>
-            Name of a bool field, property or function to show or hide the property.
+            The name of a bool member field, property or method. Obsolete; use the Condition member instead.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HideIfAttribute.Value">
+        <member name="F:Sirenix.OdinInspector.HideIfAttribute.Condition">
             <summary>
-            The optional member value.
+            A resolved string that defines the condition to check the value of, such as a member name or an expression.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HideIfAttribute.Animate">
+        <member name="F:Sirenix.OdinInspector.HideIfAttribute.Value">
+            <summary>
+            The optional condition value.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.HideIfAttribute.Animate">
             <summary>
             Whether or not to slide the property in and out when the state changes.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.HideIfAttribute.#ctor(System.String,System.Boolean)">
             <summary>
-            Hides a property in the inspector, if the specified member returns true.
+            Hides a property in the inspector, based on the value of a resolved string.
             </summary>
-            <param name="memberName">Name of a bool field, property or function to show or hide the property.</param>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
             <param name="animate">Whether or not to slide the property in and out when the state changes.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.HideIfAttribute.#ctor(System.String,System.Object,System.Boolean)">
             <summary>
-            Hides a property in the inspector, if the specified member returns the specified value.
+            Hides a property in the inspector, if the resolved string evaluates to the specified value.
             </summary>
-            <param name="memberName">Name of member to check the value of.</param>
-            <param name="optionalValue">The value to check for.</param>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
+            <param name="optionalValue">Value to check against.</param>
             <param name="animate">Whether or not to slide the property in and out when the state changes.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.HideInPlayModeAttribute">
@@ -2204,52 +3297,52 @@
             <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.ButtonGroupAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.Width">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.Width">
             <summary>
             The width. Values between 0 and 1 will be treated as percentage, 0 = auto, otherwise pixels.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.MarginLeft">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.MarginLeft">
             <summary>
             The margin left. Values between 0 and 1 will be treated as percentage, 0 = ignore, otherwise pixels.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.MarginRight">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.MarginRight">
             <summary>
             The margin right. Values between 0 and 1 will be treated as percentage, 0 = ignore, otherwise pixels.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.PaddingLeft">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.PaddingLeft">
             <summary>
             The padding left. Values between 0 and 1 will be treated as percentage, 0 = ignore, otherwise pixels.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.PaddingRight">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.PaddingRight">
             <summary>
             The padding right. Values between 0 and 1 will be treated as percentage, 0 = ignore, otherwise pixels.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.MinWidth">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.MinWidth">
             <summary>
             The minimum Width. Values between 0 and 1 will be treated as percentage, 0 = ignore, otherwise pixels.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.MaxWidth">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.MaxWidth">
             <summary>
             The maximum Width. Values between 0 and 1 will be treated as percentage, 0 = ignore, otherwise pixels.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.Title">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.Title">
             <summary>
             Adds a title above the horizontal group.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.HorizontalGroupAttribute.LabelWidth">
+        <member name="F:Sirenix.OdinInspector.HorizontalGroupAttribute.LabelWidth">
             <summary>
             The label width, 0 = auto.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.String,System.Single,System.Int32,System.Int32,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.String,System.Single,System.Int32,System.Int32,System.Single)">
             <summary>
             Organizes the property in a horizontal group.
             </summary>
@@ -2259,7 +3352,7 @@
             <param name="marginRight">The right margin in pixels.</param>
             <param name="order">The order of the group in the inspector.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.Single,System.Int32,System.Int32,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.Single,System.Int32,System.Int32,System.Single)">
             <summary>
             Organizes the property in a horizontal group.
             </summary>
@@ -2270,7 +3363,7 @@
         </member>
         <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute)">
             <summary>
-            Combines the groups togethers.
+            Merges the values of two group attributes together.
             </summary>
             <param name="other">The other group to combine with.</param>
         </member>
@@ -2311,13 +3404,7 @@
             <seealso cref="T:Sirenix.OdinInspector.DisableInInlineEditorsAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.HideInInlineEditorsAttribute"/>
         </member>
-        <member name="M:Sirenix.OdinInspector.InlineEditorAttribute.#ctor(Sirenix.OdinInspector.InlineEditorModes)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.InlineEditorAttribute" /> class.
-            </summary>
-            <param name="inlineEditorMode">The inline editor mode.</param>
-        </member>
-        <member name="F:Sirenix.OdinInspector.InlineEditorAttribute.Expanded">
+        <member name="P:Sirenix.OdinInspector.InlineEditorAttribute.Expanded">
             <summary>
             If true, the inline editor will start expanded.
             </summary>
@@ -2359,6 +3446,29 @@
             This is helpful in cases where you want to draw the entire editor, and disregard attributes 
             such as [<see cref="T:Sirenix.OdinInspector.HideInInlineEditorsAttribute"/>] and [<see cref="T:Sirenix.OdinInspector.DisableInInlineEditorsAttribute"/>].
             </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineEditorAttribute.ObjectFieldMode">
+            <summary>
+            How the InlineEditor attribute drawer should draw the object field.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InlineEditorAttribute.DisableGUIForVCSLockedAssets">
+            <summary>
+            Whether to set GUI.enabled = false when drawing an editor for an asset that is locked by source control. Defaults to true.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.InlineEditorAttribute.#ctor(Sirenix.OdinInspector.InlineEditorModes,Sirenix.OdinInspector.InlineEditorObjectFieldModes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.InlineEditorAttribute" /> class.
+            </summary>
+            <param name="inlineEditorMode">The inline editor mode.</param>
+            <param name="objectFieldMode">How the object field should be drawn.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.InlineEditorAttribute.#ctor(Sirenix.OdinInspector.InlineEditorObjectFieldModes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.InlineEditorAttribute"/> class.
+            </summary>
+            <param name="objectFieldMode">How the object field should be drawn.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.SuppressInvalidAttributeErrorAttribute">
              <summary>
@@ -2422,6 +3532,7 @@
             This is great in situations where you want to debug, and want to know which drawers might be involved in drawing the property.
             </para>
             <para>Your own custom drawers are highlighted with a green label.</para>
+            <para>Drawers, that have not been called during the draw chain, will be greyed out in the inspector to make it clear which drawers have had an effect on the properties.</para>
             </summary>
             <example>
             <code>
@@ -2481,14 +3592,24 @@
              <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.PropertyGroupAttribute"/>
         </member>
-        <member name="M:Sirenix.OdinInspector.FoldoutGroupAttribute.#ctor(System.String,System.Int32)">
+        <member name="P:Sirenix.OdinInspector.FoldoutGroupAttribute.Expanded">
+            <summary>
+            Gets a value indicating whether or not the foldout should be expanded by default.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.FoldoutGroupAttribute.HasDefinedExpanded">
+            <summary>
+            Gets a value indicating whether or not the Expanded property has been set.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.FoldoutGroupAttribute.#ctor(System.String,System.Single)">
             <summary>
             Adds the property to the specified foldout group.
             </summary>
             <param name="groupName">Name of the foldout group.</param>
             <param name="order">The order of the group in the inspector.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.FoldoutGroupAttribute.#ctor(System.String,System.Boolean,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.FoldoutGroupAttribute.#ctor(System.String,System.Boolean,System.Single)">
             <summary>
             Adds the property to the specified foldout group.
             </summary>
@@ -2496,34 +3617,11 @@
             <param name="expanded">Whether or not the foldout should be expanded by default.</param>
             <param name="order">The order of the group in the inspector.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.FoldoutGroupAttribute.#ctor(System.String,System.String,System.Int32)">
-            <summary>
-            Adds the property to the specified foldout group.
-            </summary>
-            <param name="groupName">Name of the foldout group.</param>
-            <param name="titleStringMemberName">Obsolete.</param>
-            <param name="order">The order of the group in the inspector.</param>
-        </member>
         <member name="M:Sirenix.OdinInspector.FoldoutGroupAttribute.CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute)">
             <summary>
             Combines the foldout property with another.
             </summary>
             <param name="other">The group to combine with.</param>
-        </member>
-        <member name="P:Sirenix.OdinInspector.FoldoutGroupAttribute.TitleStringMemberName">
-            <summary>
-            Name of any string field, property or function, to title the foldout in the inspector.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.FoldoutGroupAttribute.Expanded">
-            <summary>
-            Gets a value indicating whether or not the foldout should be expanded by default..
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.FoldoutGroupAttribute.HasDefinedExpanded">
-            <summary>
-            Gets a value indicating whether or not the Expanded property has been set.
-            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.GUIColorAttribute">
             <summary>
@@ -2534,40 +3632,28 @@
             <code>
             public class MyComponent : MonoBehaviour
             {
-            	[HideLabel]
             	[GUIColor(1f, 0f, 0f)]
             	public int A;
             
-            	[HideLabel]
-            	[GUIColor(1f, 0.5f, 0f)]
+            	[GUIColor(1f, 0.5f, 0f, 0.2f)]
             	public int B;
             
-            	[HideLabel]
-            	[GUIColor(1f, 1f, 0f)]
+            	[GUIColor("GetColor")]
             	public int C;
-            
-            	[HideLabel]
-            	[GUIColor(0f, 1f, 0f)]
-            	public int D;
-            
-            	[HideLabel]
-            	[GUIColor(0f, 1f, 1f)]
-            	public int E;
-            
-            	[HideLabel]
-            	[GUIColor(0f, 0f, 1f)]
-            	public int F;
             	
-            	[HideLabel]
-            	[GUIColor(1f, 0f, 1f)]
-            	public int G;
+            	private Color GetColor() { return this.A == 0 ? Color.red : Color.white; }
             }
             </code>
             </example>
         </member>
-        <member name="P:Sirenix.OdinInspector.GUIColorAttribute.Color">
+        <member name="F:Sirenix.OdinInspector.GUIColorAttribute.Color">
             <summary>
             The GUI color of the property.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.GUIColorAttribute.GetColor">
+            <summary>
+            The name of a local field, member or property that returns a Color. Both static and instance methods are supported.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.GUIColorAttribute.#ctor(System.Single,System.Single,System.Single,System.Single)">
@@ -2578,6 +3664,12 @@
             <param name="g">The green channel.</param>
             <param name="b">The blue channel.</param>
             <param name="a">The alpha channel.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.GUIColorAttribute.#ctor(System.String)">
+            <summary>
+            Sets the GUI color for the property.
+            </summary>
+            <param name="getColor">Specify the name of a local field, member or property that returns a Color.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.HideLabelAttribute">
             <summary>
@@ -2612,7 +3704,7 @@
             </code>
             </example>
         </member>
-        <member name="P:Sirenix.OdinInspector.IndentAttribute.IndentLevel">
+        <member name="F:Sirenix.OdinInspector.IndentAttribute.IndentLevel">
             <summary>
             Indicates how much a property should be indented.
             </summary>
@@ -2636,13 +3728,13 @@
             		[InfoBox("This is an int property")]
             		public int MyInt;
             
-            		[InfoBox("This info box is a warning", InfoBoxType.Warning)]
+            		[InfoBox("This info box is a warning", InfoMessageType.Warning)]
             		public float MyFloat;
             
-            		[InfoBox("This info box is an error", InfoBoxType.Error)]
+            		[InfoBox("This info box is an error", InfoMessageType.Error)]
             		public object MyObject;
             
-             	[InfoBox("This info box is just a box", InfoBoxType.None)]
+             	[InfoBox("This info box is just a box", InfoMessageType.None)]
             		public Vector3 MyVector;
             	}
              </code>
@@ -2710,19 +3802,24 @@
              <seealso cref="T:Sirenix.OdinInspector.RequiredAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.ValidateInputAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.InfoBoxAttribute.Message">
+        <member name="F:Sirenix.OdinInspector.InfoBoxAttribute.Message">
             <summary>
             The message to display in the info box.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.InfoBoxAttribute.InfoMessageType">
+        <member name="F:Sirenix.OdinInspector.InfoBoxAttribute.InfoMessageType">
             <summary>
             The type of the message box.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.InfoBoxAttribute.VisibleIf">
+        <member name="F:Sirenix.OdinInspector.InfoBoxAttribute.VisibleIf">
             <summary>
             Optional member field, property or function to show and hide the info box.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.InfoBoxAttribute.GUIAlwaysEnabled">
+            <summary>
+            When <c>true</c> the InfoBox will ignore the GUI.enable flag and always draw as enabled.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.InfoBoxAttribute.#ctor(System.String,Sirenix.OdinInspector.InfoMessageType,System.String)">
@@ -2756,17 +3853,47 @@
             </code>
             </example>
         </member>
-        <member name="P:Sirenix.OdinInspector.MinMaxSliderAttribute.MinValue">
+        <member name="F:Sirenix.OdinInspector.MinMaxSliderAttribute.MinValue">
             <summary>
-            The min value for the slider.
+            The hardcoded min value for the slider.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.MinMaxSliderAttribute.MaxValue">
+        <member name="F:Sirenix.OdinInspector.MinMaxSliderAttribute.MaxValue">
             <summary>
-            The max value for the slider.
+            The hardcoded max value for the slider.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.MinMaxSliderAttribute.ShowFields">
+        <member name="P:Sirenix.OdinInspector.MinMaxSliderAttribute.MinMember">
+            <summary>
+            The name of a field, property or method to get the min value from. Obsolete; use MinValueGetter instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.MinMaxSliderAttribute.MinValueGetter">
+            <summary>
+            A resolved string that should evaluate to a float value, which is used as the min bounds.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.MinMaxSliderAttribute.MaxMember">
+            <summary>
+            The name of a field, property or method to get the max value from. Obsolete; use MaxValueGetter instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.MinMaxSliderAttribute.MaxValueGetter">
+            <summary>
+            A resolved string that should evaluate to a float value, which is used as the max bounds.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.MinMaxSliderAttribute.MinMaxMember">
+            <summary>
+            The name of a Vector2 field, property or method to get the min max values from. Obsolete; use MinMaxValueGetter instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.MinMaxSliderAttribute.MinMaxValueGetter">
+            <summary>
+            A resolved string that should evaluate to a Vector2 value, which is used as the min/max bounds. If this is non-null, it overrides the behaviour of the MinValue, MinValueGetter, MaxValue and MaxValueGetter members.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.MinMaxSliderAttribute.ShowFields">
             <summary>
             Draw float fields for min and max value.
             </summary>
@@ -2775,8 +3902,39 @@
             <summary>
             Draws a min-max slider in the inspector. X will be set to min, and Y will be set to max.
             </summary>
-            <param name="minValue">The minimum value.</param>
+            <param name="minValue">The min value.</param>
             <param name="maxValue">The max value.</param>
+            <param name="showFields">If <c>true</c> number fields will drawn next to the MinMaxSlider.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.MinMaxSliderAttribute.#ctor(System.String,System.Single,System.Boolean)">
+            <summary>
+            Draws a min-max slider in the inspector. X will be set to min, and Y will be set to max.
+            </summary>
+            <param name="minValueGetter">A resolved string that should evaluate to a float value, which is used as the min bounds.</param>
+            <param name="maxValue">The max value.</param>
+            <param name="showFields">If <c>true</c> number fields will drawn next to the MinMaxSlider.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.MinMaxSliderAttribute.#ctor(System.Single,System.String,System.Boolean)">
+            <summary>
+            Draws a min-max slider in the inspector. X will be set to min, and Y will be set to max.
+            </summary>
+            <param name="minValue">The min value.</param>
+            <param name="maxValueGetter">A resolved string that should evaluate to a float value, which is used as the max bounds.</param>
+            <param name="showFields">If <c>true</c> number fields will drawn next to the MinMaxSlider.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.MinMaxSliderAttribute.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Draws a min-max slider in the inspector. X will be set to min, and Y will be set to max.
+            </summary>
+            <param name="minValueGetter">A resolved string that should evaluate to a float value, which is used as the min bounds.</param>
+            <param name="maxValueGetter">A resolved string that should evaluate to a float value, which is used as the max bounds.</param>
+            <param name="showFields">If <c>true</c> number fields will drawn next to the MinMaxSlider.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.MinMaxSliderAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Draws a min-max slider in the inspector. X will be set to min, and Y will be set to max.
+            </summary>
+            <param name="minMaxValueGetter">A resolved string that should evaluate to a Vector2 value, which is used as the min/max bounds. If this is non-null, it overrides the behaviour of the MinValue, MinValueGetter, MaxValue and MaxValueGetter members.</param>
             <param name="showFields">If <c>true</c> number fields will drawn next to the MinMaxSlider.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.ToggleLeftAttribute">
@@ -2817,16 +3975,30 @@
              </example>
              <seealso cref="T:Sirenix.OdinInspector.TitleAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.LabelTextAttribute.Text">
+            <summary>
+            The new text of the label.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.LabelTextAttribute.NicifyText">
+            <summary>
+            Whether the label text should be nicified before it is displayed, IE, "m_someField" becomes "Some Field".
+            If the label text is resolved via a member reference, an expression, or the like, then the evaluated result 
+            of that member reference or expression will be nicified.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.LabelTextAttribute.#ctor(System.String)">
             <summary>
             Give a property a custom label.
             </summary>
             <param name="text">The new text of the label.</param>
         </member>
-        <member name="P:Sirenix.OdinInspector.LabelTextAttribute.Text">
+        <member name="M:Sirenix.OdinInspector.LabelTextAttribute.#ctor(System.String,System.Boolean)">
             <summary>
-            The new text of the label.
+            Give a property a custom label.
             </summary>
+            <param name="text">The new text of the label.</param>
+            <param name="nicifyText">Whether to nicify the label text.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.ListDrawerSettingsAttribute">
              <summary>
@@ -2835,7 +4007,7 @@
              <example>
              <para>This example shows how you can add your own custom add button to a list.</para>
              <code>
-             [ListDrawerSettings(ShowAddButton = false, OnTitleBarGUI = "DrawTitleBarGUI")]
+             [ListDrawerSettings(HideAddButton = true, OnTitleBarGUI = "DrawTitleBarGUI")]
              public List&lt;MyType&gt; SomeList;
             
              #if UNITY_EDITOR
@@ -2846,12 +4018,65 @@
                      this.SomeList.Add(new MyType());
                  }
              }
-             #end if
+             #endif
              </code>
              </example>
              <remarks>
              This attribute is scheduled for refactoring.
              </remarks>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.HideAddButton">
+            <summary>
+            If true, the add button will not be rendered in the title toolbar. You can use OnTitleBarGUI to implement your own add button.
+            </summary>
+            <value>
+              <c>true</c> if [hide add button]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.HideRemoveButton">
+            <summary>
+            If true, the remove button  will not be rendered on list items. You can use OnBeginListElementGUI and OnEndListElementGUI to implement your own remove button.
+            </summary>
+            <value>
+                <c>true</c> if [hide remove button]; otherwise, <c>false</c>.    
+            </value>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ListElementLabelName">
+            <summary>
+            Specify the name of a member inside each list element which defines the label being drawn for each list element.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.CustomAddFunction">
+            <summary>
+            Override the default behaviour for adding objects to the list. 
+            If the referenced member returns the list type element, it will be called once per selected object.
+            If the referenced method returns void, it will only be called once regardless of how many objects are selected.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnBeginListElementGUI">
+            <summary>
+            Calls a method before each list element. The member referenced must have a return type of void, and an index parameter of type int which represents the element index being drawn.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnEndListElementGUI">
+            <summary>
+            Calls a method after each list element. The member referenced must have a return type of void, and an index parameter of type int which represents the element index being drawn.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.AlwaysAddDefaultValue">
+            <summary>
+            If true, object/type pickers will never be shown when the list add button is clicked, and default(T) will always be added instantly instead, where T is the element type of the list.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.AddCopiesLastElement">
+            <summary>
+            Whether adding a new element should copy the last element. False by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ElementColor">
+            <summary>
+            A resolved string with "int index" and "Color defaultColor" parameters that lets you control the color of individual elements.
+            </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ShowPaging">
             <summary>
@@ -2892,41 +4117,6 @@
         <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnTitleBarGUI">
             <summary>
             Use this to inject custom GUI into the title-bar of the list.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.AlwaysAddDefaultValue">
-            <summary>
-            If true, object/type pickers will never be shown when the list add button is clicked, and default(T) will always be added instantly instead, where T is the element type of the list.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.HideAddButton">
-            <summary>
-            If true, the add button will not be rendered in the title toolbar. You can use OnTitleBarGUI to implement your own add button.
-            </summary>
-            <value>
-              <c>true</c> if [hide add button]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ListElementLabelName">
-            <summary>
-            Specify the name of a member inside each list element which defines the label being drawn for each list element.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.CustomAddFunction">
-            <summary>
-            Override the default behaviour for adding objects to the list. 
-            If the referenced member returns the list type element, it will be called once per selected object.
-            If the referenced method returns void, it will only be called once regardless of how many objects are selected.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnBeginListElementGUI">
-            <summary>
-            Calls a method before each list element. The member referenced must have a return type of void, and an index parameter of type int which repricents the element index being drawn.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnEndListElementGUI">
-            <summary>
-            Calls a method after each list element. The member referenced must have a return type of void, and an index parameter of type int which repricents the element index being drawn.
             </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.PagingHasValue">
@@ -2996,9 +4186,14 @@
             </example>
             <seealso cref="T:Sirenix.OdinInspector.MinValueAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.MaxValueAttribute.MaxValue">
+        <member name="F:Sirenix.OdinInspector.MaxValueAttribute.MaxValue">
             <summary>
             The maximum value for the property.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.MaxValueAttribute.Expression">
+            <summary>
+            The string with which to resolve a maximum value. This could be a field, property or method name, or an expression.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.MaxValueAttribute.#ctor(System.Double)">
@@ -3006,6 +4201,12 @@
             Sets a maximum value for the property in the inspector.
             </summary>
             <param name="maxValue">The max value.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.MaxValueAttribute.#ctor(System.String)">
+            <summary>
+            Sets a maximum value for the property in the inspector.
+            </summary>
+            <param name="expression">The string with which to resolve a maximum value. This could be a field, property or method name, or an expression.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.MinValueAttribute">
             <summary>
@@ -3039,9 +4240,14 @@
             </example>
             <seealso cref="T:Sirenix.OdinInspector.MaxValueAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.MinValueAttribute.MinValue">
+        <member name="F:Sirenix.OdinInspector.MinValueAttribute.MinValue">
             <summary>
             The minimum value for the property.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.MinValueAttribute.Expression">
+            <summary>
+            The string with which to resolve a minimum value. This could be a field, property or method name, or an expression.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.MinValueAttribute.#ctor(System.Double)">
@@ -3050,9 +4256,15 @@
             </summary>
             <param name="minValue">The minimum value.</param>
         </member>
+        <member name="M:Sirenix.OdinInspector.MinValueAttribute.#ctor(System.String)">
+            <summary>
+            Sets a minimum value for the property in the inspector.
+            </summary>
+            <param name="expression">The string with which to resolve a minimum value. This could be a field, property or method name, or an expression.</param>
+        </member>
         <member name="T:Sirenix.OdinInspector.MultiLinePropertyAttribute">
             <summary>
-            <para>MultiLineProperty is used on any string property</para>
+            <para>MultiLineProperty is used on any string property.</para>
             <para>Use this to allow users to edit strings in a multi line textbox.</para>
             </summary>
             <remarks>
@@ -3067,12 +4279,12 @@
             	public string MyString;
             
             	[ShowInInspector, MultiLineProperty(10)]
-            	public string PropertyString { get; set; }
+            	public string PropertyString;
             }
             </code>
             </example>
         </member>
-        <member name="P:Sirenix.OdinInspector.MultiLinePropertyAttribute.Lines">
+        <member name="F:Sirenix.OdinInspector.MultiLinePropertyAttribute.Lines">
             <summary>
             The number of lines for the text box.
             </summary>
@@ -3105,8 +4317,12 @@
              </code>
              </example>
              <seealso cref="T:UnityEngine.TooltipAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.ShowInInspectorAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.PropertySpaceAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.PropertyRangeAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.PropertyOrderAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.PropertyTooltipAttribute.Tooltip">
+        <member name="F:Sirenix.OdinInspector.PropertyTooltipAttribute.Tooltip">
             <summary>
             The message shown in the tooltip.
             </summary>
@@ -3123,7 +4339,6 @@
              <para>Use this for when you want to see the value of a property in the inspector, but don't want it to be changed.</para>
              </summary>
              <remarks>
-             <para>If more clarifycation is needed write it here</para>
              <note type="note">This attribute only affects the inspector! Values can still be changed by script.</note>
              </remarks>
              <example>
@@ -3206,34 +4421,44 @@
              </code>
              </example>
         </member>
+        <member name="F:Sirenix.OdinInspector.OnInspectorGUIAttribute.Prepend">
+            <summary>
+            The resolved action string that defines the action to be invoked before the property is drawn, if any.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.OnInspectorGUIAttribute.Append">
+            <summary>
+            The resolved action string that defines the action to be invoked after the property is drawn, if any.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.OnInspectorGUIAttribute.PrependMethodName">
+            <summary>
+            The name of the method to be called before the property is drawn, if any. Obsolete; use the Prepend member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.OnInspectorGUIAttribute.AppendMethodName">
+            <summary>
+            The name of the method to be called after the property is drawn, if any. Obsolete; use the Append member instead.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.OnInspectorGUIAttribute.#ctor">
             <summary>
-            Calls the function when the inspector is being drawn.
+            Calls a function decorated with this attribute, when the inspector is being drawn.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.OnInspectorGUIAttribute.#ctor(System.String,System.Boolean)">
             <summary>
-            Adds callback to the specified method when the property is being drawn.
+            Adds callbacks to the specified action when the property is being drawn.
             </summary>
-            <param name="methodName">The name of the member function.</param>
+            <param name="action">The resolved action string that defines the action to be invoked.</param>
             <param name="append">If <c>true</c> the method will be called after the property has been drawn. Otherwise the method will be called before.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.OnInspectorGUIAttribute.#ctor(System.String,System.String)">
             <summary>
-            Adds callback to the specified method when the property is being drawn.
+            Adds callbacks to the specified actions when the property is being drawn.
             </summary>
-            <param name="prependMethodName">The name of the member function to invoke before the property is drawn.</param>
-            <param name="appendMethodName">The name of the member function to invoke after the property is drawn.</param>
-        </member>
-        <member name="P:Sirenix.OdinInspector.OnInspectorGUIAttribute.PrependMethodName">
-            <summary>
-            The name of the method to be called before the property is drawn, if any.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.OnInspectorGUIAttribute.AppendMethodName">
-            <summary>
-            The name of the method to be called after the property is drawn, if any.
-            </summary>
+            <param name="prepend">The resolved action string that defines the action to be invoked before the property is drawn, if any.</param>
+            <param name="append">The resolved action string that defines the action to be invoked after the property is drawn, if any.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.OnValueChangedAttribute">
              <summary>
@@ -3289,20 +4514,35 @@
         </member>
         <member name="P:Sirenix.OdinInspector.OnValueChangedAttribute.MethodName">
             <summary>
-            Name of callback member function.
+            Name of callback member function. Obsolete; use the Action member instead.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.OnValueChangedAttribute.IncludeChildren">
+        <member name="F:Sirenix.OdinInspector.OnValueChangedAttribute.Action">
             <summary>
-            Whether to invoke the method when a child value of the property is changed.
+            A resolved string that defines the action to perform when the value is changed, such as an expression or method invocation.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.OnValueChangedAttribute.IncludeChildren">
+            <summary>
+            Whether to perform the action when a child value of the property is changed.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.OnValueChangedAttribute.InvokeOnUndoRedo">
+            <summary>
+            Whether to perform the action when an undo or redo event occurs via UnityEditor.Undo.undoRedoPerformed. True by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.OnValueChangedAttribute.InvokeOnInitialize">
+            <summary>
+            Whether to perform the action when the property is initialized. This will generally happen when the property is first viewed/queried (IE when the inspector is first opened, or when its containing foldout is first expanded, etc), and whenever its type or a parent type changes, or it is otherwise forced to rebuild.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.OnValueChangedAttribute.#ctor(System.String,System.Boolean)">
             <summary>
             Adds a callback for when the property's value is changed.
             </summary>
-            <param name="methodName">Name of the method.</param>
-            <param name="includeChildren">Whether to invoke the method when a child value of the property is changed.</param>
+            <param name="action">A resolved string that defines the action to perform when the value is changed, such as an expression or method invocation.</param>
+            <param name="includeChildren">Whether to perform the action when a child value of the property is changed.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.PropertyGroupAttribute">
              <summary>
@@ -3317,14 +4557,14 @@
              <example>
              <para>This example shows how <see cref="T:Sirenix.OdinInspector.BoxGroupAttribute"/> could be implemented.</para>
              <code>
-             [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+             [AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true)]
              public class BoxGroupAttribute : PropertyGroupAttribute
              {
                  public string Label { get; private set; }
                  public bool ShowLabel { get; private set; }
                  public bool CenterLabel { get; private set; }
             
-                 public BoxGroupAttribute(string group, bool showLabel = true, bool centerLabel = false, int order = 0)
+                 public BoxGroupAttribute(string group, bool showLabel = true, bool centerLabel = false, float order = 0)
                      : base(group, order)
                  {
                      this.Label = group;
@@ -3356,27 +4596,48 @@
              <seealso cref="T:Sirenix.OdinInspector.TabGroupAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.PropertyGroupAttribute.GroupID">
+        <member name="F:Sirenix.OdinInspector.PropertyGroupAttribute.GroupID">
             <summary>
             The ID used to grouping properties together.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.PropertyGroupAttribute.GroupName">
+        <member name="F:Sirenix.OdinInspector.PropertyGroupAttribute.GroupName">
             <summary>
             The name of the group. This is the last part of the group ID if there is a path, otherwise it is just the group ID.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.PropertyGroupAttribute.Order">
+        <member name="F:Sirenix.OdinInspector.PropertyGroupAttribute.Order">
             <summary>
             The order of the group.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.PropertyGroupAttribute.#ctor(System.String,System.Int32)">
+        <member name="F:Sirenix.OdinInspector.PropertyGroupAttribute.HideWhenChildrenAreInvisible">
+            <summary>
+            Whether to hide the group by default when all its children are not visible. True by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.PropertyGroupAttribute.VisibleIf">
+            <summary>
+            If not null, this resolved string controls the group's visibility. Note that if <see cref="F:Sirenix.OdinInspector.PropertyGroupAttribute.HideWhenChildrenAreInvisible"/> is true, there must be *both* a visible child *and* this condition must be true, before the group is shown.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.PropertyGroupAttribute.AnimateVisibility">
+            <summary>
+            Whether to animate the visibility changes of this group or make the visual transition instantly. True by default.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertyGroupAttribute.#ctor(System.String,System.Single)">
             <summary>
             Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.PropertyGroupAttribute"/> class.
             </summary>
             <param name="groupId">The group identifier.</param>
             <param name="order">The group order.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertyGroupAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.PropertyGroupAttribute"/> class.
+            </summary>
+            <param name="groupId">The group identifier.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.PropertyGroupAttribute.Combine(Sirenix.OdinInspector.PropertyGroupAttribute)">
             <summary>
@@ -3444,12 +4705,17 @@
             </code>
             </example>    
         </member>
-        <member name="P:Sirenix.OdinInspector.PropertyOrderAttribute.Order">
+        <member name="F:Sirenix.OdinInspector.PropertyOrderAttribute.Order">
             <summary>
             The order for the property.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.PropertyOrderAttribute.#ctor(System.Int32)">
+        <member name="M:Sirenix.OdinInspector.PropertyOrderAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.PropertyOrderAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.PropertyOrderAttribute.#ctor(System.Single)">
             <summary>
             Defines a custom order for the property.
             </summary>
@@ -3482,6 +4748,16 @@
              <seealso cref="T:Sirenix.OdinInspector.InfoBoxAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.ValidateInputAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.RequiredAttribute.ErrorMessage">
+            <summary>
+            The message of the info box.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.RequiredAttribute.MessageType">
+            <summary>
+            The type of the info box.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.RequiredAttribute.#ctor">
             <summary>
             Adds an error box to the inspector, if the property is missing.
@@ -3505,16 +4781,6 @@
             Adds an info box to the inspector, if the property is missing.
             </summary>
             <param name="messageType">The type of info box to draw.</param>
-        </member>
-        <member name="P:Sirenix.OdinInspector.RequiredAttribute.ErrorMessage">
-            <summary>
-            The message of the info box.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.RequiredAttribute.MessageType">
-            <summary>
-            The type of the info box.
-            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.SceneObjectsOnlyAttribute">
             <summary>
@@ -3593,7 +4859,7 @@
             		public string MyString;
             
             		// Member function that returns an object of type IList.
-            		private IList ValuesFunction()
+            		private IList&lt;ValueDropdownItem&lt;int&gt;&gt; ValuesFunction()
             		{
             			return new ValueDropdownList&lt;int&gt;
             			{
@@ -3626,14 +4892,119 @@
         </member>
         <member name="P:Sirenix.OdinInspector.ValueDropdownAttribute.MemberName">
             <summary>
-            Name of any field, property or method member that implements IList. E.g. arrays or Lists.
+            Name of any field, property or method member that implements IList. E.g. arrays or Lists. Obsolete; use the ValuesGetter member instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.ValuesGetter">
+            <summary>
+            A resolved string that should evaluate to a value that is assignable to IList; e.g, arrays and lists are compatible.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.NumberOfItemsBeforeEnablingSearch">
+            <summary>
+            The number of items before enabling search. Default is 10.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.IsUniqueList">
+            <summary>
+            False by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.DrawDropdownForListElements">
+            <summary>
+            True by default. If the ValueDropdown attribute is applied to a list, then disabling this,
+            will render all child elements normally without using the ValueDropdown. The ValueDropdown will
+            still show up when you click the add button on the list drawer, unless <see cref="F:Sirenix.OdinInspector.ValueDropdownAttribute.DisableListAddButtonBehaviour"/> is true.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.DisableListAddButtonBehaviour">
+            <summary>
+            False by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.ExcludeExistingValuesInList">
+            <summary>
+            If the ValueDropdown attribute is applied to a list, and <see cref="F:Sirenix.OdinInspector.ValueDropdownAttribute.IsUniqueList"/> is set to true, then enabling this,
+            will exclude existing values, instead of rendering a checkbox indicating whether the item is already included or not.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.ExpandAllMenuItems">
+            <summary>
+            If the dropdown renders a tree-view, then setting this to true will ensure everything is expanded by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.AppendNextDrawer">
+            <summary>
+            If true, instead of replacing the drawer with a wide dropdown-field, the dropdown button will be a little button, drawn next to the other drawer.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.DisableGUIInAppendedDrawer">
+            <summary>
+            Disables the the GUI for the appended drawer. False by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.DoubleClickToConfirm">
+            <summary>
+            By default, a single click selects and confirms the selection.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.FlattenTreeView">
+            <summary>
+            By default, the dropdown will create a tree view.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.DropdownWidth">
+            <summary>
+            Gets or sets the width of the dropdown. Default is zero.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.DropdownHeight">
+            <summary>
+            Gets or sets the height of the dropdown. Default is zero.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.DropdownTitle">
+            <summary>
+            Gets or sets the title for the dropdown. Null by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.SortDropdownItems">
+            <summary>
+            False by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.HideChildProperties">
+            <summary>
+            Whether to draw all child properties in a foldout.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownAttribute.CopyValues">
+            <summary>
+            Whether values selected by the value dropdown should be copies of the original or references (in the case of reference types). Defaults to true.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.ValueDropdownAttribute.#ctor(System.String)">
             <summary>
             Creates a dropdown menu for a property.
             </summary>
-            <param name="memberName">Name of any field, property or method member that implements IList. E.g. arrays or Lists.</param>
+            <param name="valuesGetter">A resolved string that should evaluate to a value that is assignable to IList; e.g, arrays and lists are compatible.</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.IValueDropdownItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.IValueDropdownItem.GetText">
+            <summary>
+            Gets the label for the dropdown item.
+            </summary>
+            <returns>The label text for the item.</returns>
+        </member>
+        <member name="M:Sirenix.OdinInspector.IValueDropdownItem.GetValue">
+            <summary>
+            Gets the value of the dropdown item.
+            </summary>
+            <returns>The value for the item.</returns>
         </member>
         <member name="T:Sirenix.OdinInspector.ValueDropdownList`1">
             <summary>
@@ -3654,11 +5025,47 @@
             </summary>
             <param name="value">The value.</param>
         </member>
+        <member name="T:Sirenix.OdinInspector.ValueDropdownItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownItem.Text">
+            <summary>
+            The name of the item.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValueDropdownItem.Value">
+            <summary>
+            The value of the item.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ValueDropdownItem.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.ValueDropdownItem`1" /> class.
+            </summary>
+            <param name="text">The text to display for the dropdown item.</param>
+            <param name="value">The value for the dropdown item.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ValueDropdownItem.ToString">
+            <summary>
+            The name of this item.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ValueDropdownItem.Sirenix#OdinInspector#IValueDropdownItem#GetText">
+            <summary>
+            Gets the text.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ValueDropdownItem.Sirenix#OdinInspector#IValueDropdownItem#GetValue">
+            <summary>
+            Gets the value.
+            </summary>
+        </member>
         <member name="T:Sirenix.OdinInspector.ValueDropdownItem`1">
             <summary>
-            Used by <see cref="T:Sirenix.OdinInspector.ValueDropdownList`1"/> for value dropdowns.
+            
             </summary>
-            <typeparam name="T">The type of the value.</typeparam>
         </member>
         <member name="F:Sirenix.OdinInspector.ValueDropdownItem`1.Text">
             <summary>
@@ -3672,42 +5079,25 @@
         </member>
         <member name="M:Sirenix.OdinInspector.ValueDropdownItem`1.#ctor(System.String,`0)">
             <summary>
-            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.ValueDropdownItem`1"/> class.
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.ValueDropdownItem`1" /> class.
             </summary>
-            <param name="text">The name of the item.</param>
-            <param name="value">The value of the item.</param>
+            <param name="text">The text to display for the dropdown item.</param>
+            <param name="value">The value for the dropdown item.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ValueDropdownItem`1.Sirenix#OdinInspector#IValueDropdownItem#GetText">
+            <summary>
+            Gets the text.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ValueDropdownItem`1.Sirenix#OdinInspector#IValueDropdownItem#GetValue">
+            <summary>
+            Gets the value.
+            </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.ValueDropdownItem`1.ToString">
             <summary>
             The name of this item.
             </summary>
-            <returns>
-            The name of this item.
-            </returns>
-        </member>
-        <member name="M:Sirenix.OdinInspector.ValueDropdownItem`1.Equals(Sirenix.OdinInspector.ValueDropdownItem{`0})">
-            <summary>
-            Equalses the specified other.
-            </summary>
-            <param name="other">The other item.</param>
-            <returns><c>true</c> if equal. Otherwise <c>false</c>.</returns>
-        </member>
-        <member name="M:Sirenix.OdinInspector.ValueDropdownItem`1.Equals(System.Object)">
-            <summary>
-            Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
-            </summary>
-            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
-            <returns>
-              <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
-            </returns>
-        </member>
-        <member name="M:Sirenix.OdinInspector.ValueDropdownItem`1.GetHashCode">
-            <summary>
-            Returns a hash code for this instance.
-            </summary>
-            <returns>
-            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
-            </returns>
         </member>
         <member name="T:Sirenix.OdinInspector.ShowInInspectorAttribute">
              <summary>
@@ -3808,22 +5198,27 @@
             The default tab group name which is used when the single-parameter constructor is called.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TabGroupAttribute.TabName">
+        <member name="F:Sirenix.OdinInspector.TabGroupAttribute.TabName">
             <summary>
             Name of the tab.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.TabGroupAttribute.Tabs">
-            <summary>
-            Name of all tabs in this group.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.TabGroupAttribute.UseFixedHeight">
+        <member name="F:Sirenix.OdinInspector.TabGroupAttribute.UseFixedHeight">
             <summary>
             Should this tab be the same height as the rest of the tab group.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.TabGroupAttribute.#ctor(System.String,System.Boolean,System.Int32)">
+        <member name="F:Sirenix.OdinInspector.TabGroupAttribute.Paddingless">
+            <summary>
+            If true, the content of each page will not be contained in any box.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TabGroupAttribute.HideTabGroupIfTabGroupOnlyHasOneTab">
+            <summary>
+            If true, the tab group will be hidden if it only contains one tab.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.TabGroupAttribute.#ctor(System.String,System.Boolean,System.Single)">
             <summary>
             Organizes the property into the specified tab in the default group.
             Default group name is '_DefaultTabGroup'
@@ -3832,7 +5227,7 @@
             <param name="useFixedHeight">if set to <c>true</c> [use fixed height].</param>
             <param name="order">The order.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.TabGroupAttribute.#ctor(System.String,System.String,System.Boolean,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.TabGroupAttribute.#ctor(System.String,System.String,System.Boolean,System.Single)">
             <summary>
             Organizes the property into the specified tab in the specified group.
             </summary>
@@ -3841,11 +5236,28 @@
             <param name="useFixedHeight">Set to true to have a constant height across the entire tab group.</param>
             <param name="order">The order of the group.</param>
         </member>
+        <member name="P:Sirenix.OdinInspector.TabGroupAttribute.Tabs">
+            <summary>
+            Name of all tabs in this group.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.TabGroupAttribute.CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute)">
             <summary>
             Combines the tab group with another group.
             </summary>
             <param name="other">The other group.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.TabGroupAttribute.Sirenix#OdinInspector#Internal#ISubGroupProviderAttribute#GetSubGroupAttributes">
+            <summary>
+            Not yet documented.
+            </summary>
+            <returns>Not yet documented.</returns>
+        </member>
+        <member name="M:Sirenix.OdinInspector.TabGroupAttribute.Sirenix#OdinInspector#Internal#ISubGroupProviderAttribute#RepathMemberAttribute(Sirenix.OdinInspector.PropertyGroupAttribute)">
+            <summary>
+            Not yet documented.
+            </summary>
+            <returns>Not yet documented.</returns>
         </member>
         <member name="T:Sirenix.OdinInspector.TitleAttribute">
             <summary>
@@ -3913,6 +5325,31 @@
             <seealso cref="T:Sirenix.OdinInspector.ButtonAttribute"/>
             <seealso cref="T:Sirenix.OdinInspector.LabelTextAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.TitleAttribute.Title">
+            <summary>
+            The title displayed above the property in the inspector.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAttribute.Subtitle">
+            <summary>
+            Optional subtitle.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAttribute.Bold">
+            <summary>
+            If <c>true</c> the title will be displayed with a bold font.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAttribute.HorizontalLine">
+            <summary>
+            Gets a value indicating whether or not to draw a horizontal line below the title.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAttribute.TitleAlignment">
+            <summary>
+            Title alignment.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.TitleAttribute.#ctor(System.String,System.String,Sirenix.OdinInspector.TitleAlignments,System.Boolean,System.Boolean)">
             <summary>
             Creates a title above any property in the inspector.
@@ -3923,31 +5360,6 @@
             <param name="horizontalLine">Horizontal line</param>
             <param name="bold">If <c>true</c> the title will be drawn with a bold font.</param>
         </member>
-        <member name="P:Sirenix.OdinInspector.TitleAttribute.Title">
-            <summary>
-            The title displayed above the property in the inspector.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.TitleAttribute.Subtitle">
-            <summary>
-            Optional subtitle.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.TitleAttribute.Bold">
-            <summary>
-            If <c>true</c> the title will be displayed with a bold font.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.TitleAttribute.HorizontalLine">
-            <summary>
-            Gets a value indicating whether or not to draw a horizontal line below the title.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.TitleAttribute.TitleAlignment">
-            <summary>
-            Title alignment.
-            </summary>
-        </member>
         <member name="T:Sirenix.OdinInspector.ToggleAttribute">
              <summary>
              <para>Toggle is used on any field or property, and allows to enable or disable the property in the inspector.</para>
@@ -3957,7 +5369,7 @@
              <note type="note">Toggle does current not support any static members for toggling.</note>
              </remarks>
              <example>
-             <para>The following example shows how Toggle is used to create a togglable property.</para>
+             <para>The following example shows how Toggle is used to create a toggleable property.</para>
              <code>
              public class MyComponent : MonoBehaviour
             	{
@@ -3976,21 +5388,21 @@
              <seealso cref="!:ToggleListAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.ToggleAttribute.ToggleMemberName">
+            <summary>
+            Name of any bool field or property to enable or disable the object.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ToggleAttribute.CollapseOthersOnExpand">
+            <summary>
+            If true, all other open toggle groups will collapse once another one opens.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.ToggleAttribute.#ctor(System.String)">
             <summary>
             Create a togglable property in the inspector.
             </summary>
             <param name="toggleMemberName">Name of any bool field or property to enable or disable the object.</param>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ToggleAttribute.ToggleMemberName">
-            <summary>
-            Name of any bool field or property to enable or disable the object.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ToggleAttribute.CollapseOthersOnExpand">
-            <summary>
-            If true, all other open toggle groups will collapse once another one opens.
-            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.ToggleGroupAttribute">
              <summary>
@@ -4028,7 +5440,18 @@
              <seealso cref="T:Sirenix.OdinInspector.ToggleAttribute"/>
              <seealso cref="!:ToggleListAttribute"/>"/>
         </member>
-        <member name="M:Sirenix.OdinInspector.ToggleGroupAttribute.#ctor(System.String,System.Int32,System.String)">
+        <member name="F:Sirenix.OdinInspector.ToggleGroupAttribute.ToggleGroupTitle">
+            <summary>
+            Title of the toggle group in the inspector.
+            If <c>null</c> <see cref="P:Sirenix.OdinInspector.ToggleGroupAttribute.ToggleMemberName"/> will be used instead.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ToggleGroupAttribute.CollapseOthersOnExpand">
+            <summary>
+            If true, all other open toggle groups will collapse once another one opens.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ToggleGroupAttribute.#ctor(System.String,System.Single,System.String)">
             <summary>
             Creates a ToggleGroup. See <see cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>.
             </summary>
@@ -4043,31 +5466,24 @@
             <param name="toggleMemberName">Name of any bool field or property to enable or disable the ToggleGroup.</param>
             <param name="groupTitle">Use this to name the group differently than toggleMemberName.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.ToggleGroupAttribute.#ctor(System.String,System.Int32,System.String,System.String)">
+        <member name="M:Sirenix.OdinInspector.ToggleGroupAttribute.#ctor(System.String,System.Single,System.String,System.String)">
             <summary>
             Obsolete constructor overload.
             </summary>
+            <param name="toggleMemberName">Obsolete overload.</param>
+            <param name="order">Obsolete overload.</param>
+            <param name="groupTitle">Obsolete overload.</param>
+            <param name="titleStringMemberName">Obsolete overload.</param>
         </member>
         <member name="P:Sirenix.OdinInspector.ToggleGroupAttribute.ToggleMemberName">
             <summary>
             Name of any bool field, property or function to enable or disable the ToggleGroup.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.ToggleGroupAttribute.ToggleGroupTitle">
-            <summary>
-            Title of the toggle group in the inspector.
-            If <c>null</c> <see cref="P:Sirenix.OdinInspector.ToggleGroupAttribute.ToggleMemberName"/> will be used instead.
-            </summary>
-        </member>
         <member name="P:Sirenix.OdinInspector.ToggleGroupAttribute.TitleStringMemberName">
             <summary>
             Name of any string field, property or function, to title the toggle group in the inspector.
-            If <c>null</c> <see cref="P:Sirenix.OdinInspector.ToggleGroupAttribute.ToggleGroupTitle"/> will be used instead.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ToggleGroupAttribute.CollapseOthersOnExpand">
-            <summary>
-            If true, all other open toggle groups will collapse once another one opens.
+            If <c>null</c> <see cref="F:Sirenix.OdinInspector.ToggleGroupAttribute.ToggleGroupTitle"/> will be used instead.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.ToggleGroupAttribute.CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute)">
@@ -4122,11 +5538,42 @@
              <seealso cref="T:Sirenix.OdinInspector.InfoBoxAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.RequiredAttribute"/>
         </member>
+        <member name="F:Sirenix.OdinInspector.ValidateInputAttribute.DefaultMessage">
+            <summary>
+            Default message for invalid values.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ValidateInputAttribute.MemberName">
+            <summary>
+            OBSOLETE; use the Condition member instead.
+            A resolved string that should evaluate to a boolean value, and which should validate the input. Note that in expressions, the $value named parameter, and in methods, a parameter named value, can be used to get the validated value instead of referring to the value by its containing member. This makes it easier to reuse validation strings.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValidateInputAttribute.Condition">
+            <summary>
+            A resolved string that should evaluate to a boolean value, and which should validate the input. Note that in expressions, the $value named parameter, and in methods, a parameter named value, can be used to get the validated value instead of referring to the value by its containing member. This makes it easier to reuse validation strings.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValidateInputAttribute.MessageType">
+            <summary>
+            The type of the message.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValidateInputAttribute.IncludeChildren">
+            <summary>
+            Whether to also trigger validation when changes to child values happen. This is true by default.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ValidateInputAttribute.ContinuousValidationCheck">
+            <summary>
+            If true, the validation method will not only be executed when the User has changed the value. It'll run once every frame in the inspector.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.ValidateInputAttribute.#ctor(System.String,System.String,Sirenix.OdinInspector.InfoMessageType)">
             <summary>
             Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.ValidateInputAttribute"/> class.
             </summary>
-            <param name="memberName">Name of callback function to validate input. The function must have at least one parameter of the same type as the property.</param>
+            <param name="condition">A resolved string that should evaluate to a boolean value, and which should validate the input. Note that in expressions, the $value named parameter, and in methods, a parameter named value, can be used to get the validated value instead of referring to the value by its containing member. This makes it easier to reuse validation strings.</param>
             <param name="defaultMessage">Default message for invalid values.</param>
             <param name="messageType">Type of the message.</param>
         </member>
@@ -4134,26 +5581,10 @@
             <summary>
             Obsolete. Rejecting invalid input is no longer supported. Use the other constructors instead.
             </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ValidateInputAttribute.DefaultMessage">
-            <summary>
-            Default message for invalid values.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ValidateInputAttribute.MemberName">
-            <summary>
-            Name of callback function to validate input. The function must have at least one parameter of the same type as the property.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ValidateInputAttribute.MessageType">
-            <summary>
-            The type of the message.
-            </summary>
-        </member>
-        <member name="P:Sirenix.OdinInspector.ValidateInputAttribute.IncludeChildren">
-            <summary>
-            Whether to also trigger validation when changes to child values happen. This is true by default.
-            </summary>
+            <param name="condition">Obsolete overload.</param>
+            <param name="message">Obsolete overload.</param>
+            <param name="messageType">Obsolete overload.</param>
+            <param name="rejectedInvalidInput">Obsolete overload.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.ShowIfAttribute">
              <summary>
@@ -4201,30 +5632,38 @@
         </member>
         <member name="P:Sirenix.OdinInspector.ShowIfAttribute.MemberName">
             <summary>
-            Name of a bool field, property or function to show or hide the property.
+            The name of a bool member field, property or method. Obsolete; use the Condition member instead.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.ShowIfAttribute.Animate">
+        <member name="F:Sirenix.OdinInspector.ShowIfAttribute.Condition">
+            <summary>
+            A resolved string that defines the condition to check the value of, such as a member name or an expression.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ShowIfAttribute.Value">
+            <summary>
+            The optional condition value.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ShowIfAttribute.Animate">
             <summary>
             Whether or not to slide the property in and out when the state changes.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.ShowIfAttribute.Value">
-            <summary>
-            The optional member value.
-            </summary>
-        </member>
         <member name="M:Sirenix.OdinInspector.ShowIfAttribute.#ctor(System.String,System.Boolean)">
             <summary>
-            Shows a property in the inspector, if the specified member returns true.
+            Shows a property in the inspector, based on the value of a resolved string.
             </summary>
-            <param name="memberName">Name of a bool field, property or function to show or hide the property.</param>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
             <param name="animate">Whether or not to slide the property in and out when the state changes.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.ShowIfAttribute.#ctor(System.String,System.Object,System.Boolean)">
             <summary>
-            Shows a property in the inspector, if the specified member returns the specified value.
+            Shows a property in the inspector, if the resolved string evaluates to the specified value.
             </summary>
+            <param name="condition">A resolved string that defines the condition to check the value of, such as a member name or an expression.</param>
+            <param name="optionalValue">Value to check against.</param>
+            <param name="animate">Whether or not to slide the property in and out when the state changes.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.WrapAttribute">
             <summary>
@@ -4246,14 +5685,14 @@
             </example>
             <seealso cref="!:AngleWrapAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.WrapAttribute.Min">
+        <member name="F:Sirenix.OdinInspector.WrapAttribute.Min">
             <summary>
-            Lowest value for the property.
+            The lowest value for the property.
             </summary>
         </member>
-        <member name="P:Sirenix.OdinInspector.WrapAttribute.Max">
+        <member name="F:Sirenix.OdinInspector.WrapAttribute.Max">
             <summary>
-            Heighest value for the property.
+            The highest value for the property.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.WrapAttribute.#ctor(System.Double,System.Double)">
@@ -4265,7 +5704,7 @@
         </member>
         <member name="T:Sirenix.OdinInspector.InfoMessageType">
             <summary>
-            Type of info message box. This enum matches Unity's MessageType enum which could not be since it is located in the UnityEditor assembly.
+            Type of info message box. This enum matches Unity's MessageType enum which could not be used since it is located in the UnityEditor assembly.
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.InfoMessageType.None">

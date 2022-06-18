@@ -20,7 +20,7 @@ public class Heap<T> where T : IHeapItem<T> {
 	}
 
 	public T RemoveFirst() {
-		T firstItem = items[0];
+		var firstItem = items[0];
 		Count--;
 
 		items[0] = items[Count];
@@ -36,11 +36,11 @@ public class Heap<T> where T : IHeapItem<T> {
 
 	private void SortDown(T item) {
 		while (true) {
-			int child1Index = item.HeapIndex * 2 + 1;
-			int child2Index = item.HeapIndex * 2 + 2;
+			var child1Index = item.HeapIndex * 2 + 1;
+			var child2Index = item.HeapIndex * 2 + 2;
 
 			if (child1Index < Count) {
-				T childToSwap = items[child1Index];
+				var childToSwap = items[child1Index];
 				if (child2Index < Count) {
 					if (childToSwap.CompareTo(items[child2Index]) < 0) {
 						childToSwap = items[child2Index];
@@ -59,9 +59,9 @@ public class Heap<T> where T : IHeapItem<T> {
 	}
 
 	private void SortUp(T item) {
-		int parentIndex = (item.HeapIndex - 1) / 2;
+		var parentIndex = (item.HeapIndex - 1) / 2;
 		while (true) {
-			T parent = items[parentIndex];
+			var parent = items[parentIndex];
 
 			if (item.CompareTo(parent) > 0) {
 				Swap(item, parent);
@@ -77,7 +77,7 @@ public class Heap<T> where T : IHeapItem<T> {
 		items[a.HeapIndex] = b;
 		items[b.HeapIndex] = a;
 
-		int aIndex = a.HeapIndex;
+		var aIndex = a.HeapIndex;
 		a.HeapIndex = b.HeapIndex;
 		b.HeapIndex = aIndex;
 	}

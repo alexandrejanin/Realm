@@ -26,7 +26,7 @@ public class Settler : WorldUnit {
 			CheckTile();
 			Move();
 		} else {
-			LinkedList<Tile> newPath = FindPath(startingTown.GetTownTile());
+			var newPath = FindPath(startingTown.GetTownTile());
 			if (newPath != null) {
 				SetPath(newPath);
 			} else {
@@ -68,7 +68,7 @@ public class Settler : WorldUnit {
 		childTown = new Town(tile, Faction, population, startingTown);
 		World.towns.Add(childTown);
 
-		World.log.Add(new TownCreationEvent(World.Days, WorldEventImportance.Interesting, childTown));
+		World.log.Add(new TownCreationEvent(World.Day, WorldEventImportance.Interesting, childTown));
 
 		road = new Road(childTown);
 		SetPath(FindPath(startingTown.Tile));

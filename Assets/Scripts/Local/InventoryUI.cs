@@ -10,10 +10,10 @@ public class InventoryUI : MonoBehaviour {
 	[SerializeField] private ItemSlot itemSlotPrefab;
 	[SerializeField] private BodyPartSlot bodyPartSlotPrefab;
 	private Character character;
-	private readonly List<Item> displayedItems = new List<Item>();
-	private readonly List<ItemSlot> itemSlots = new List<ItemSlot>();
+	private readonly List<Item> displayedItems = new();
+	private readonly List<ItemSlot> itemSlots = new();
 
-	private readonly List<BodyPart> displayedBodyParts = new List<BodyPart>();
+	private readonly List<BodyPart> displayedBodyParts = new();
 
 	private void Awake() {
 		character = LocalManager.PlayerCharacter;
@@ -25,9 +25,9 @@ public class InventoryUI : MonoBehaviour {
 		freeSpaceText.text = character.inventory.FreeSpace + "/" + character.inventory.maxSize;
 		itemCountText.text = character.inventory.ItemCount.ToString();
 
-		foreach (Item item in character.inventory.Items) {
+		foreach (var item in character.inventory.Items) {
 			if (!displayedItems.Contains(item)) {
-				ItemSlot itemSlot = Instantiate(itemSlotPrefab, Vector3.zero, Quaternion.identity, inventoryGrid.transform);
+				var itemSlot = Instantiate(itemSlotPrefab, Vector3.zero, Quaternion.identity, inventoryGrid.transform);
 				itemSlot.Item = item;
 				displayedItems.Add(item);
 				itemSlots.Add(itemSlot);
@@ -35,16 +35,16 @@ public class InventoryUI : MonoBehaviour {
 		}
 
 		itemSlots.RemoveAll(item => item == null);
-		foreach (ItemSlot itemSlot in itemSlots) {
+		foreach (var itemSlot in itemSlots) {
 			if (!character.inventory.Contains(itemSlot.Item) || itemSlot.Item == null) {
 				displayedItems.Remove(itemSlot.Item);
 				Destroy(itemSlot.gameObject);
 			}
 		}
 
-		foreach (BodyPart bodyPart in character.body.bodyParts) {
+		foreach (var bodyPart in character.body.bodyParts) {
 			if (bodyPart.slot != Slot.None && !displayedBodyParts.Contains(bodyPart)) {
-				BodyPartSlot bodyPartSlot = Instantiate(bodyPartSlotPrefab, Vector3.zero, Quaternion.identity, equipmentGrid.transform);
+				var bodyPartSlot = Instantiate(bodyPartSlotPrefab, Vector3.zero, Quaternion.identity, equipmentGrid.transform);
 				bodyPartSlot.bodyPart = bodyPart;
 				displayedBodyParts.Add(bodyPart);
 			}
